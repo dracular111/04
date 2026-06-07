@@ -15,7 +15,7 @@ getgenv().GTIME_TRIAL_CHEST_TO_CLAIM = 3 -- số rương nhận trong Time Trial
 getgenv().GTIME_TRIAL_HATCH_FIRST_SECONDS = 30 -- hatch trước khi chạy trial
 getgenv().GTIME_TRIAL_ENCHANTS = {"Tap Power","Criticals","Super Lightning","Lightning","Strong Pets","Strong Pets","Tap Power","Tap Power","Strong Pets"} -- enchant dùng trong Time Trial
 
-getgenv().GLOOTBOXES = {"Titanic Fantasy Present"} -- lootbox cần mở
+getgenv().GLOOTBOXES = {"Locked Hype Egg","Locked Hype Egg 3","Titanic Fantasy Present"}
 --getgenv().GCOMBINE_MACHINE_OUTPUT = "Titanic Fantasy Present" -- vật phẩm mục tiêu nâng cấp event zone
 getgenv().GCOMBINE_KEYS = true -- tự ghép key
 
