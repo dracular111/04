@@ -1,0 +1,36 @@
+task.wait(10)
+getgenv().GGFX_MODE = 1  --2 = LOW_GFX: still see what they do, 1 = REMOVE_GFX : no visuals, 3 = FULL_GFX
+getgenv().GMASTERY_TO_MAX = "Enchants"
+getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {"Wicked Kirin","Veil Horse","Knight Golem","Ruinous Angelus","Wisp Griffin"} -- pet không gửi daycare
+
+getgenv().GDO_RNG_INSTANCE = true
+getgenv().GUSE_BOOSTS = true
+getgenv().GRNG_SELL_PETS = true
+getgenv().GRNG_CRAFT_DICE = true
+getgenv().GRNG_ALLOW_BOOST_DICE_WITHOUT_LIGHTNING_WHEN_HAVE_OVER = 10
+getgenv().GRNG_USE_MEGA1 = false
+getgenv().GEVENT_UPGRADES = {
+    { Id = "RNGEggLuck",    MaxTier = 20 },
+    { Id = "RNGHatchSpeed", MaxTier = 15 },
+    { Id = "RNGBonusLuck",  MaxTier = 10 },
+    { Id = "RNGHugeLuck",   MaxTier = 15 },
+    { Id = "RNGExtraEgg",   MaxTier = 8  },
+}
+getgenv().GKICK_ON_STAFF = true
+
+getgenv().GLOOTBOXES = {"Locked Hype Egg","Locked Hype Egg 3","Titanic Fantasy Present"}
+
+getgenv().GCLEAR_FAVORITE_PETS = true
+getgenv().GCOMBINE_KEYS = true
+getgenv().GCONSUME_CHARMS = true
+getgenv().GCONSUME_SEED_BAGS = true
+getgenv().GOPEN_ITEMS_IN_BULK = true
+getgenv().GCOLLECT_FREE_ITEMS = true
+getgenv().GENCHANTS = {"Tap Power","Strong Pets","Criticals","Treasure Hunter","Lucky Eggs","Lucky Eggs","Lucky Eggs","Tap Power","Tap Power"}
+--getgenv().GFRUITS = {"Apple","Rainbow","Banana"}
+--getgenv().GPOTIONS = {"Lucky","Huge","Treasure Hunter","Damage"}
+getgenv().GPOTIONS_MAX_TIER = 99
+
+getgenv().GHUGE_COUNT = 25 -- số Huge cần đạt trước khi gửi
+getgenv().GMAIL_RECEIVERS = {""} -- tài khoản nhận mail
+getgenv().GMAX_MAIL_COST = "2m" -- phí mail tối đa
