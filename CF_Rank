@@ -1,3 +1,8 @@
+spawn(function()
+task.wait(2)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dracular111/03/main/A-KickTimeTrial"))()
+end)
+
 task.wait(10)
 getgenv().GGFX_MODE = 3 -- chế độ đồ họa thấp
 getgenv().GRANK_TO = 40 -- rank mục tiêu
