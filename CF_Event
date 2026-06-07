@@ -1,5 +1,5 @@
 task.wait(10)
-getgenv().GGFX_MODE = 1  --2 = LOW_GFX: still see what they do, 1 = REMOVE_GFX : no visuals, 3 = FULL_GFX
+getgenv().GGFX_MODE = 3  --2 = LOW_GFX: still see what they do, 1 = REMOVE_GFX : no visuals, 3 = FULL_GFX
 getgenv().GMASTERY_TO_MAX = "Enchants"
 getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {"Wicked Kirin","Veil Horse","Knight Golem","Ruinous Angelus","Wisp Griffin"} -- pet không gửi daycare
 
