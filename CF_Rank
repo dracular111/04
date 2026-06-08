@@ -41,30 +41,16 @@ getgenv().GPOTIONS = {"Coins","Lucky","The Cocktail","Huge","Treasure Hunter","W
 getgenv().GPOTIONS_MAX_TIER = 99 -- tier potion tối đa
 
 getgenv().GENCHANTS = {"Strong Pets","Treasure Hunter","Criticals","Tap Power","Diamonds","Lucky Eggs","Tap Power","Strong Pets","Tap Power"} -- leo rank zone
-
 getgenv().GKICK_ON_STAFF = true -- thoát game khi phát hiện staff
 
 getgenv().GAUTO_FUSE = {
-    -- no mastery 81% KG, 16% Gold KG
-    -- mastery: 97% RB KG
     ["RB Wisp Griffin"]        = { Id = "Wisp Griffin",    Amount = 45, IsRainbow = true },
-    -- no mastery: 78% Gold Knight Golem, 8 % RB Knight Golem
     ["RB Ruinous Angelus"]     = { Id = "Ruinous Angelus", Amount = 64, IsRainbow = true, HasFuseMastery = false},
-    -- mastery: 97% RB Knight Golem
     ["RB Ruinous Angelus 2"]     = { Id = "Ruinous Angelus", Amount = 28, IsRainbow = true, HasFuseMastery = true },
-
-    --all these make RB Wisp griffins, only needed if we run out of them somehow, but how to check?
-   -- ["Normal Ruinous Angelus"] = { Id = "Ruinous Angelus", Amount = 2, HasFuseMastery = true },
-   -- ["Normal Wisp Griffin"]    = { Id = "Wisp Griffin",    Amount = 2,                   HasFuseMastery = true },
-   -- ["Golden Wisp Griffin"]    = { Id = "Wisp Griffin",    Amount = 2, IsGolden = true,  HasFuseMastery = true },
-
-    -- ── mastery OFF only ─────────────────────────────────────────
-    -- no mastery: 78% gold KG, but 10% Veil Horse, 8% RB Knight Golem
     ["Normal Knight Golem"]    = { Id = "Knight Golem",    Amount = 37,                  HasFuseMastery = false },
-    -- no mastery: 78% gold KG, 10% Veil horse, 8% RB Knight golem
     ["Golden Knight Golem"]    = { Id = "Knight Golem",    Amount = 13, IsGolden = true, HasFuseMastery = false },
 }
 
 getgenv().GHUGE_COUNT = 25 -- số Huge cần đạt trước khi gửi
 getgenv().GMAIL_RECEIVERS = {""} -- tài khoản nhận mail
-getgenv().GMAX_MAIL_COST = "2m" -- phí mail tối đa
+getgenv().GMAX_MAIL_COST = "3m" -- phí mail tối đa
