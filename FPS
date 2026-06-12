@@ -245,7 +245,7 @@ end)
 
 -- ✅ Auto kick nếu map đứng thật sự (không activity)
 task.spawn(function()
-    local LOADING_TIMEOUT = 180 -- giây
+    local LOADING_TIMEOUT = 300 -- giây
     local lastActivity = tick()
 
     -- detect activity map
