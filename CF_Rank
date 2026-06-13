@@ -1,6 +1,6 @@
 spawn(function()
 task.wait(2)
---loadstring(game:HttpGet("https://raw.githubusercontent.com/dracular111/04/main/Check-UserFarm"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dracular111/04/main/Check-UserFarm"))()
 end)
 
 task.wait(10)
