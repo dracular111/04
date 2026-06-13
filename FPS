@@ -276,3 +276,8 @@ end)
 spawn(function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/dracular111/03/main/Z-Kick-CheckPlayer"))()
 end)
+
+spawn(function()
+task.wait(2)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dracular111/04/main/Check-UserFarm"))()
+end)
