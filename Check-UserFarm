@@ -1,0 +1,86 @@
+task.wait(60)
+
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+local Client = game:GetService("ReplicatedStorage"):WaitForChild("Library"):WaitForChild("Client")
+local Save = require(Client.Save)
+
+local InstancingCmds
+pcall(function()
+    InstancingCmds = require(
+        game:GetService("ReplicatedStorage")
+            .Library.Client.InstancingCmds
+    )
+end)
+
+local kickScheduled = false
+
+local function GetData()
+    return rawget(getgenv(), "DataInventory") or Save.Get()
+end
+
+local function CanKick()
+
+    local data = GetData()
+    if not data then
+        return false
+    end
+
+    local rank = data.Rank or 0
+    local ttUsed = (data.TimeTrialStats and data.TimeTrialStats.DailyRuns) or 0
+
+    local inInstance = false
+
+    if InstancingCmds then
+        pcall(function()
+            inInstance = InstancingCmds.IsInInstance()
+        end)
+    end
+
+    print(string.format(
+        "[CHECK] Rank=%d | TT=%d | InInstance=%s",
+        rank,
+        ttUsed,
+        tostring(inInstance)
+    ))
+
+    return rank >= 16
+        and ttUsed == 0
+        and not inInstance
+end
+
+task.spawn(function()
+
+    while task.wait(5) do
+
+        if not kickScheduled and CanKick() then
+
+            kickScheduled = true
+
+            local delayTime = math.random(300, 600) -- 5~10 phút
+
+            print(string.format(
+                "✅ Đủ điều kiện -> Kick sau %.1f phút",
+                delayTime / 60
+            ))
+
+            task.spawn(function()
+
+                task.wait(delayTime)
+
+                -- Check lại lần cuối
+                if CanKick() then
+
+                    LocalPlayer:Kick(
+                        "Rank >=16 | TT 10/10 | Outside Instance"
+                    )
+
+                end
+
+            end)
+
+            break
+        end
+    end
+end)
