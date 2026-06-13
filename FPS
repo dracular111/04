@@ -243,32 +243,6 @@ task.spawn(function()
 
 end)
 
--- ✅ Auto kick nếu map đứng thật sự (không activity)
-task.spawn(function()
-    local LOADING_TIMEOUT = 600 -- giây
-    local lastActivity = tick()
-
-    -- detect activity map
-    workspace.DescendantAdded:Connect(function()
-        lastActivity = tick()
-    end)
-
-    workspace.DescendantRemoving:Connect(function()
-        lastActivity = tick()
-    end)
-
-    while task.wait(1) do
-        local idle = tick() - lastActivity
-
-        if idle >= LOADING_TIMEOUT then
-            warn("Map đứng quá lâu -> Rejoin")
-
-            game.Players.LocalPlayer:Kick("KillMap")
-            break
-        end
-    end
-end)
-
 spawn(function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/dracular111/03/main/A-UI-TimeTrial"))()
 end)
