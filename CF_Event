@@ -8,7 +8,6 @@ getgenv().GGFX_MODE = 1 -- chế độ đồ họa thấp
 getgenv().GMAX_EGG_SLOTS = 99 -- mở tối đa slot trứng
 getgenv().GMAX_EQUIP_SLOTS = 99 -- mở tối đa slot pet equip
 getgenv().GMASTERY_TO_MAX = "Enchants" -- mastery ưu tiên cày
-getgenv().GMAX_ZONE_UPGRADE_COST = 200000 -- giới hạn gem nâng zone
 getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {"Wicked Kirin","Veil Horse","Knight Golem","Ruinous Angelus","Wisp Griffin"} -- pet không gửi daycare
 
 getgenv().GDO_BACKROOMS = true
@@ -44,7 +43,7 @@ getgenv().GFRUITS = {"Watermelon","Candycane","Apple","Rainbow","Pineapple","Ora
 getgenv().GPOTIONS = {"Coins","Lucky","The Cocktail","Huge","Treasure Hunter","Walkspeed","Diamonds","Damage"} -- potion tự sử dụng
 getgenv().GPOTIONS_MAX_TIER = 99 -- tier potion tối đa
 
-getgenv().GENCHANTS = {"Strong Pets","Treasure Hunter","Criticals","Tap Power","Diamonds","Lucky Eggs","Tap Power","Strong Pets","Tap Power"} -- leo rank zone
+getgenv().GENCHANTS = {"Strong Pets","Treasure Hunter","Criticals","Tap Power","Tap Power","Tap Power","Tap Power","Strong Pets","Tap Power"} -- leo rank zone
 getgenv().GKICK_ON_STAFF = true -- thoát game khi phát hiện staff
 
 getgenv().GAUTO_FUSE = {
