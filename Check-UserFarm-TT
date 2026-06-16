@@ -1,3 +1,4 @@
+task.wait(300)
 -- 🔥 ANTI DUPLICATE
 if _G.TIME_TRIAL_MONITOR then return end
 _G.TIME_TRIAL_MONITOR = true
