@@ -1,4 +1,3 @@
-task.wait(300)
 -- 🔥 ANTI DUPLICATE
 if _G.TIME_TRIAL_MONITOR then return end
 _G.TIME_TRIAL_MONITOR = true
@@ -50,9 +49,9 @@ task.spawn(function()
             task.wait(10)
 
             if getRunsLeft() <= 0 then
-                warn("❌ Xác nhận hết lượt → đợi 2 phút rồi kiểm tra")
+                warn("❌ Xác nhận hết lượt → đợi 3 phút rồi kiểm tra")
 
-                task.wait(120)
+                task.wait(180)
 
                 -- Chỉ kick nếu vẫn ở map ngoài
                 if not IsInInstance() then
