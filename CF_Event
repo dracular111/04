@@ -26,7 +26,7 @@ getgenv().GEVENT_UPGRADES = {
     { Id = "BackroomsTokenFind", MaxTier = 15 }, --max is 15
     { Id = "BackroomsExtraLootRoll",  MaxTier = 10 }, --max is 10
 }
-getgenv().GENCHANTS = {"Huge Hunter","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs"}
+getgenv().GHATCH_ENCHANTS = {"Huge Hunter","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs"}
 getgenv().GINVENTORY_COUNTS = {
     ["BackroomDollars"] = {Class = "Currency", Id = "DaydreamCoins"},
 }
