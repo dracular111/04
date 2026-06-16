@@ -43,7 +43,7 @@ getgenv().GFRUITS = {"Watermelon","Candycane","Apple","Rainbow","Pineapple","Ora
 getgenv().GPOTIONS = {"Coins","Lucky","The Cocktail","Huge","Treasure Hunter","Walkspeed","Diamonds","Damage"} -- potion tự sử dụng
 getgenv().GPOTIONS_MAX_TIER = 99 -- tier potion tối đa
 
-getgenv().GENCHANTS = {"Strong Pets","Treasure Hunter","Criticals","Tap Power","Tap Power","Tap Power","Tap Power","Strong Pets","Tap Power"} -- leo rank zone
+getgenv().GENCHANTS = {"Strong Pets","Treasure Hunter","Criticals","Tap Power","Tap Power","Criticals","Tap Power","Strong Pets","Tap Power"} -- leo rank zone
 getgenv().GKICK_ON_STAFF = true -- thoát game khi phát hiện staff
 
 getgenv().GAUTO_FUSE = {
