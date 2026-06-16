@@ -1,86 +1,37 @@
-task.wait(10)
+repeat task.wait() until game:IsLoaded()
 
-local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
+local Player = game.Players.LocalPlayer
+local Save = require(game.ReplicatedStorage.Library.Client.Save)
 
-local Client = game:GetService("ReplicatedStorage"):WaitForChild("Library"):WaitForChild("Client")
-local Save = require(Client.Save)
+local Data
 
-local InstancingCmds
-pcall(function()
-    InstancingCmds = require(
-        game:GetService("ReplicatedStorage")
-            .Library.Client.InstancingCmds
-    )
-end)
+for i = 1, 10 do
+    local ok, result = pcall(Save.Get)
 
-local kickScheduled = false
-
-local function GetData()
-    return rawget(getgenv(), "DataInventory") or Save.Get()
-end
-
-local function CanKick()
-
-    local data = GetData()
-    if not data then
-        return false
+    if ok and result then
+        Data = result
+        break
     end
 
-    local rank = data.Rank or 0
-    local ttUsed = (data.TimeTrialStats and data.TimeTrialStats.DailyRuns) or 0
+    task.wait(1)
+end
 
-    local inInstance = false
+if not Data then
+    while true do
+        Player:Kick("Không load được data")
+        task.wait(1)
+    end
+end
 
-    if InstancingCmds then
+local Rank = Data.Rank or Data.Ranks or 0
+
+print("Rank:", Rank)
+
+if Rank >= 16 then
+    while true do
         pcall(function()
-            inInstance = InstancingCmds.IsInInstance()
+            Player:Kick("Rank >=16 -> đổi Config2")
         end)
+        task.wait(0.5)
     end
-
-    print(string.format(
-        "[CHECK] Rank=%d | TT=%d | InInstance=%s",
-        rank,
-        ttUsed,
-        tostring(inInstance)
-    ))
-
-    return rank >= 16
-        and ttUsed == 0
-        and not inInstance
 end
-
-task.spawn(function()
-
-    while task.wait(5) do
-
-        if not kickScheduled and CanKick() then
-
-            kickScheduled = true
-
-            local delayTime = math.random(120, 300) -- 2~5 phút
-
-            print(string.format(
-                "✅ Đủ điều kiện -> Kick sau %.1f phút",
-                delayTime / 60
-            ))
-
-            task.spawn(function()
-
-                task.wait(delayTime)
-
-                -- Check lại lần cuối
-                if CanKick() then
-
-                    LocalPlayer:Kick(
-                        "Reload -> CONFIG_2"
-                    )
-
-                end
-
-            end)
-
-            break
-        end
-    end
-end)
