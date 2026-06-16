@@ -29,7 +29,7 @@ task.spawn(function()
             print("✅ Đủ điều kiện, sẽ kick sau 3 phút")
 
             task.spawn(function()
-                task.wait(180) -- 3 phút
+                task.wait(120) -- 2 phút
 
                 -- Check lại lần cuối
                 if ShouldReloadConfig3() then
