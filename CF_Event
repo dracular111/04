@@ -12,7 +12,7 @@ getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {"Wicked Kirin","Veil Horse","Knight 
 
 getgenv().GDO_BACKROOMS = true
 getgenv().GBACKROOMS_OPEN_CHESTS = false
-getgenv().GALLOW_HOPPING = true
+getgenv().GALLOW_HOPPING = false
 getgenv().GBACKROOMS_MIN_MULTIPLIER = 75 -- can also put 75 or 100
 getgenv().GEVENT_UPGRADES = {
     { Id = "BackroomsBossDamage",    MaxTier = 20 }, --max is 20
