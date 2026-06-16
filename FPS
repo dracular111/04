@@ -250,3 +250,8 @@ end)
 spawn(function()
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/dracular111/04/main/Check-UserFarm-TT"))()
 end)
+
+spawn(function()
+task.wait(2)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dracular111/04/main/Check-UserFarm"))()
+end)
