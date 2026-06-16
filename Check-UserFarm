@@ -58,7 +58,7 @@ task.spawn(function()
 
             kickScheduled = true
 
-            local delayTime = math.random(300, 360) -- 5~6 phút
+            local delayTime = math.random(30, 60) -- 30s~1 phút
 
             print(string.format(
                 "✅ Đủ điều kiện -> Kick sau %.1f phút",
