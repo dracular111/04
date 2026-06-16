@@ -1,8 +1,4 @@
 spawn(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/dracular111/04/main/Check-UserFarm"))()
-end)
-
-spawn(function()
 task.wait(10)
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/dracular111/03/main/Z-Kick-CheckPlayer"))()
 end)
