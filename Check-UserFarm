@@ -1,37 +1,15 @@
-repeat task.wait() until game:IsLoaded()
-
-local Player = game.Players.LocalPlayer
-local Save = require(game.ReplicatedStorage.Library.Client.Save)
-
-local function GetData()
-    for i = 1, 10 do
-        local ok, result = pcall(Save.Get)
-
-        if ok and result then
-            return result
-        end
-
-        task.wait(1)
-    end
-
-    return nil
-end
-
-local Data = GetData()
-
-if not Data then
-    Player:Kick("Không load được data")
-    return
-end
+local LastRank
 
 while true do
-    local ok, NewData = pcall(Save.Get)
+    local ok, Data = pcall(Save.Get)
 
-    if ok and NewData then
-        Data = NewData
-
+    if ok and Data then
         local Rank = Data.Rank or Data.Ranks or 0
-        print("Rank:", Rank)
+
+        if Rank ~= LastRank then
+            LastRank = Rank
+            print("Rank:", Rank)
+        end
 
         if Rank >= 16 then
             Player:Kick("Rank >=16 -> đổi Config2")
@@ -39,5 +17,5 @@ while true do
         end
     end
 
-    task.wait(300) -- kiểm tra lại mỗi 5 phut
+    task.wait(120)
 end
