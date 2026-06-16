@@ -1,4 +1,4 @@
-task.wait(300)
+task.wait(10)
 
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
@@ -58,7 +58,7 @@ task.spawn(function()
 
             kickScheduled = true
 
-            local delayTime = math.random(30, 60) -- 30s~1 phút
+            local delayTime = math.random(300, 360) -- 30s~1 phút
 
             print(string.format(
                 "✅ Đủ điều kiện -> Kick sau %.1f phút",
