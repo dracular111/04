@@ -49,9 +49,9 @@ task.spawn(function()
             task.wait(10)
 
             if getRunsLeft() <= 0 then
-                warn("❌ Xác nhận hết lượt → đợi 3 phút rồi kiểm tra")
+                warn("❌ Xác nhận hết lượt → đợi 1 phút rồi kiểm tra")
 
-                task.wait(180)
+                task.wait(60)
 
                 -- Chỉ kick nếu vẫn ở map ngoài
                 if not IsInInstance() then
