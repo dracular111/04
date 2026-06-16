@@ -1,0 +1,43 @@
+local kickScheduled = false
+
+local function ShouldReloadConfig3()
+    local data = Save.Get()
+    if not data then
+        return false
+    end
+
+    local rank = data.Rank or 0
+    local runsUsed = (data.TimeTrialStats and data.TimeTrialStats.DailyRuns) or 0
+
+    local inInstance = false
+    if InstancingCmds then
+        pcall(function()
+            inInstance = InstancingCmds.IsInInstance()
+        end)
+    end
+
+    return rank >= 16
+        and runsUsed >= 10
+        and not inInstance
+end
+
+task.spawn(function()
+    while task.wait(30) do
+        if not kickScheduled and ShouldReloadConfig3() then
+            kickScheduled = true
+
+            print("✅ Đủ điều kiện, sẽ kick sau 3 phút")
+
+            task.spawn(function()
+                task.wait(180) -- 3 phút
+
+                -- Check lại lần cuối
+                if ShouldReloadConfig3() then
+                    game.Players.LocalPlayer:Kick("Reload -> CONFIG_3")
+                end
+            end)
+
+            break
+        end
+    end
+end)
