@@ -3,6 +3,11 @@ task.wait(2)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/dracular111/04/main/Check-UserFarm"))()
 end)
 
+spawn(function()
+task.wait(10)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dracular111/03/main/Z-Kick-CheckPlayer"))()
+end)
+
 task.wait(10)
 getgenv().GGFX_MODE = 1 -- chế độ đồ họa thấp
 getgenv().GRANK_TO = 40 -- rank mục tiêu
