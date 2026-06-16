@@ -73,7 +73,7 @@ task.spawn(function()
                 if CanKick() then
 
                     LocalPlayer:Kick(
-                        "Rank >=16 | TT 10/10 | Outside Instance"
+                        "Reload -> CONFIG_2"
                     )
 
                 end
