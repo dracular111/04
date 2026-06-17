@@ -45,7 +45,7 @@ local CONFIG = {
         KickMessage = "Change config 3",
     },
     -- MODE 3
-    --  22:58 GMT+7
+    --  22:59 GMT+7
     Kick3 = {
         Enabled = true,
         Rank = 16,
@@ -273,7 +273,7 @@ end)
 
 --========================================================
 -- MODE 3
--- 22:58 GMT+7
+-- 22:59 GMT+7
 -- Bỏ qua thứ 7
 --========================================================
 
@@ -311,7 +311,7 @@ task.spawn(function()
         end
 
         if gmt7.hour == 22
-            and gmt7.min == 58
+            and gmt7.min == 59
         then
 
             local rank = GetRank()
