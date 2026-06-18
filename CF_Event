@@ -69,6 +69,6 @@ getgenv().GAUTO_FUSE = {
     ["Golden Knight Golem"]    = { Id = "Knight Golem",    Amount = 13, IsGolden = true, HasFuseMastery = false },
 }
 
-getgenv().GHUGE_COUNT = 25 -- số Huge cần đạt trước khi gửi
+getgenv().GHUGE_COUNT = 15 -- số Huge cần đạt trước khi gửi
 getgenv().GMAIL_RECEIVERS = {""} -- tài khoản nhận mail
 getgenv().GMAX_MAIL_COST = "3m" -- phí mail tối đa
