@@ -22,7 +22,9 @@ getgenv().GTIME_TRIAL_HATCH_FIRST_SECONDS = 1 -- hatch trước khi chạy trial
 getgenv().GTIME_TRIAL_ENCHANTS = {"Tap Power","Criticals","Super Lightning","Lightning","Strong Pets","Strong Pets","Tap Power","Tap Power","Strong Pets"} -- enchant dùng trong Time Trial
 
 getgenv().GLOOTBOXES = {"Locked Hype Egg","Locked Hype Egg 3","Titanic Fantasy Present"}
-
+getgenv().GINVENTORY_COUNTS = {
+    ["BackroomDollars"] = {Class = "Currency", Id = "DaydreamCoins"},
+}
 --getgenv().GLOOTBOXES = {"Locked Hype Egg","Titanic Fantasy Present"}
 getgenv().GCOMBINE_KEYS = true -- tự ghép key
 
