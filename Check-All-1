@@ -1,0 +1,453 @@
+if _G.PRO_KICK_SYSTEM then
+    return
+end
+_G.PRO_KICK_SYSTEM = true
+-- SERVICES
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local LocalPlayer = Players.LocalPlayer
+
+local Save = require(
+    ReplicatedStorage.Library.Client.Save
+)
+
+local InstancingCmds
+
+pcall(function()
+    InstancingCmds = require(
+        ReplicatedStorage.Library.Client.InstancingCmds
+    )
+end)
+
+-- CONFIG
+local CONFIG = {
+    -- Global scan interval (seconds)
+    ScanInterval = 60,
+
+    -- MODE 1
+    Kick1 = {
+        Enabled = true,
+        Rank = 16,
+        VerifyTime = 120,
+        KickMessage = "Change config 2",
+    },
+    -- MODE 2
+    Kick2 = {
+        Enabled = true,
+        Rank = 16,
+        VerifyTime = 180,
+        KickMessage = "Change config 3",
+    },
+    -- MODE 3
+    --  22:55 GMT+7
+    Kick3 = {
+        Enabled = false,
+        Rank = 16,
+        KickMessage = "Reload config",
+    },
+    -- MODE 4
+    Kick4 = {
+    	Enabled = true,
+    	Rank = 16,
+    	VerifyTime = 600,
+    	RandomMin = 1,
+    	RandomMax = 600,
+    	KickMessage = "Reload Time Trial",
+    }
+}
+local function Log(...)
+
+    print(
+        "[PRO-KICK]",
+        ...
+    )
+end
+-- DATA
+local function GetData()
+
+    local ok, data = pcall(Save.Get)
+
+    if ok then
+        return data
+    end
+
+    return nil
+end
+
+local function GetRank()
+
+    local data = GetData()
+
+    return tonumber(
+        data and (data.Rank or data.Ranks)
+    ) or 0
+end
+
+local function GetRunsLeft()
+
+    local data = GetData()
+
+    local runsUsed = tonumber(
+        data
+        and data.TimeTrialStats
+        and data.TimeTrialStats.DailyRuns
+    ) or 0
+
+    return math.max(
+        0,
+        10 - runsUsed
+    )
+end
+
+local function IsInInstance()
+
+    local result = false
+
+    if InstancingCmds then
+        pcall(function()
+            result = InstancingCmds.IsInInstance()
+        end)
+    end
+
+    return result
+end
+
+-- SAFE KICK
+
+local AlreadyKicked = false
+
+local function KickPlayer(msg)
+
+    if AlreadyKicked then
+        return
+    end
+
+    AlreadyKicked = true
+
+    warn(
+        "[PRO-KICK] KICK =>",
+        msg
+    )
+
+    LocalPlayer:Kick(msg)
+end
+
+-- VERIFY CONDITION
+local function VerifyCondition(
+    duration,
+    callback
+)
+
+    local startTime = tick()
+
+    while tick() - startTime < duration do
+
+        local ok = false
+
+        pcall(function()
+            ok = callback()
+        end)
+
+        if not ok then
+            return false
+        end
+
+        task.wait(10)
+    end
+
+    return true
+end
+-- MODE 1
+task.spawn(function()
+
+    while task.wait(CONFIG.ScanInterval) do
+
+        if AlreadyKicked then
+            return
+        end
+
+        if not CONFIG.Kick1.Enabled then
+            continue
+        end
+
+        local rank = GetRank()
+        local runsLeft = GetRunsLeft()
+        local inInstance = IsInInstance()
+
+        if rank >= CONFIG.Kick1.Rank
+            and runsLeft == 10
+            and not inInstance
+        then
+
+            Log(
+                "MODE1 DETECTED",
+                "Rank =", rank,
+                "Runs =", runsLeft
+            )
+
+            local passed = VerifyCondition(
+                CONFIG.Kick1.VerifyTime,
+                function()
+
+                    return GetRank() >= CONFIG.Kick1.Rank
+                        and GetRunsLeft() == 10
+                        and not IsInInstance()
+
+                end
+            )
+
+            if passed then
+
+                KickPlayer(
+                    CONFIG.Kick1.KickMessage
+                )
+
+                return
+            end
+
+            Log("MODE1 CANCELLED")
+        end
+    end
+end)
+-- MODE 2
+task.spawn(function()
+
+    while task.wait(CONFIG.ScanInterval) do
+
+        if AlreadyKicked then
+            return
+        end
+
+        if not CONFIG.Kick2.Enabled then
+            continue
+        end
+
+        local rank = GetRank()
+        local runsLeft = GetRunsLeft()
+        local inInstance = IsInInstance()
+
+        if rank >= CONFIG.Kick2.Rank
+            and runsLeft <= 0
+            and not inInstance
+        then
+
+            Log(
+                "MODE2 DETECTED",
+                "Rank =", rank,
+                "Runs =", runsLeft
+            )
+
+            local passed = VerifyCondition(
+                CONFIG.Kick2.VerifyTime,
+                function()
+
+                    return GetRank() >= CONFIG.Kick2.Rank
+                        and GetRunsLeft() <= 0
+                        and not IsInInstance()
+
+                end
+            )
+
+            if passed then
+
+                KickPlayer(
+                    CONFIG.Kick2.KickMessage
+                )
+
+                return
+            end
+
+            Log("MODE2 CANCELLED")
+        end
+    end
+end)
+-- MODE 3
+task.spawn(function()
+
+    if not CONFIG.Kick3.Enabled then
+        return
+    end
+
+    local triggeredToday = false
+
+    while task.wait(5) do
+
+        if AlreadyKicked then
+            return
+        end
+
+        local gmt7 = os.date(
+            "!*t",
+            os.time() + (7 * 3600)
+        )
+
+        if gmt7.hour == 0 and gmt7.min == 0 then
+            triggeredToday = false
+        end
+
+        if gmt7.wday == 7 then
+            continue
+        end
+
+        if triggeredToday then
+            continue
+        end
+
+        if gmt7.hour == 22
+            and gmt7.min == 55
+        then
+
+            local rank = GetRank()
+
+            if rank >= CONFIG.Kick3.Rank then
+
+                triggeredToday = true
+
+                Log(
+                    "MODE3 TRIGGERED",
+                    "Rank =", rank
+                )
+
+                KickPlayer(
+                    CONFIG.Kick3.KickMessage
+                )
+
+                return
+            end
+        end
+    end
+end)
+-- MODE 4
+task.spawn(function()
+
+    while task.wait(CONFIG.ScanInterval) do
+
+        if AlreadyKicked then
+            return
+        end
+
+        if not CONFIG.Kick4.Enabled then
+            continue
+        end
+
+        local rank = GetRank()
+        local runsLeft = GetRunsLeft()
+        local inInstance = IsInInstance()
+
+        if rank >= CONFIG.Kick4.Rank
+            and runsLeft == 10
+            and inInstance
+        then
+
+            Log(
+                "MODE4 DETECTED",
+                "Rank =", rank,
+                "Runs =", runsLeft
+            )
+
+            local passed = VerifyCondition(
+                CONFIG.Kick4.VerifyTime,
+                function()
+
+                    return GetRank() >= CONFIG.Kick4.Rank
+                        and GetRunsLeft() == 10
+                        and IsInInstance()
+
+                end
+            )
+
+            if not passed then
+
+                Log("MODE4 VERIFY CANCELLED")
+
+                continue
+            end
+
+            local delayTime = math.random(
+                CONFIG.Kick4.RandomMin,
+                CONFIG.Kick4.RandomMax
+            )
+
+            Log(
+                "MODE4 RANDOM",
+                delayTime,
+                "seconds"
+            )
+
+            local start = tick()
+            local cancelled = false
+
+            while tick() - start < delayTime do
+
+                if AlreadyKicked then
+                    return
+                end
+
+                if GetRank() < CONFIG.Kick4.Rank
+                    or GetRunsLeft() ~= 10
+                    or not IsInInstance()
+                then
+
+                    cancelled = true
+
+                    Log("MODE4 RANDOM CANCELLED")
+
+                    break
+                end
+
+                task.wait(10)
+
+            end
+
+            if cancelled then
+                continue
+            end
+
+            if GetRank() >= CONFIG.Kick4.Rank
+                and GetRunsLeft() == 10
+                and IsInInstance()
+            then
+
+                KickPlayer(
+                    CONFIG.Kick4.KickMessage
+                )
+
+                return
+
+            end
+
+        end
+
+    end
+
+end)
+-- STATUS
+Log("SYSTEM LOADED")
+
+Log(
+    "Kick1:",
+    CONFIG.Kick1.Enabled and "ON" or "OFF",
+    "| Rank:",
+    CONFIG.Kick1.Rank
+)
+
+Log(
+    "Kick2:",
+    CONFIG.Kick2.Enabled and "ON" or "OFF",
+    "| Rank:",
+    CONFIG.Kick2.Rank
+)
+
+Log(
+    "Kick3:",
+    CONFIG.Kick3.Enabled and "ON" or "OFF",
+    "| Rank:",
+    CONFIG.Kick3.Rank
+)
+Log(
+    "Kick4:",
+    CONFIG.Kick4.Enabled and "ON" or "OFF",
+    "| Rank:",
+    CONFIG.Kick4.Rank
+)
