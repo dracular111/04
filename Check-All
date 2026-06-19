@@ -2,11 +2,7 @@ if _G.PRO_KICK_SYSTEM then
     return
 end
 _G.PRO_KICK_SYSTEM = true
-
---========================================================
 -- SERVICES
---========================================================
-
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
@@ -26,8 +22,7 @@ end)
 
 -- CONFIG
 local CONFIG = {
-    -- Check tổng thể mỗi 60 giây
-    ------------------------------------------------------
+    -- Global scan interval (seconds)
     ScanInterval = 60,
 
     -- MODE 1
@@ -50,6 +45,15 @@ local CONFIG = {
         Enabled = false,
         Rank = 16,
         KickMessage = "Reload config",
+    },
+    -- MODE 4
+    Kick4 = {
+    	Enabled = true,
+    	Rank = 16,
+    	VerifyTime = 600,
+    	RandomMin = 1,
+    	RandomMax = 600,
+    	KickMessage = "Reload Time Trial",
     }
 }
 local function Log(...)
@@ -129,11 +133,7 @@ local function KickPlayer(msg)
     LocalPlayer:Kick(msg)
 end
 
---========================================================
 -- VERIFY CONDITION
--- Điều kiện phải giữ nguyên liên tục
---========================================================
-
 local function VerifyCondition(
     duration,
     callback
@@ -158,11 +158,7 @@ local function VerifyCondition(
 
     return true
 end
-
---========================================================
 -- MODE 1
---========================================================
-
 task.spawn(function()
 
     while task.wait(CONFIG.ScanInterval) do
@@ -214,11 +210,7 @@ task.spawn(function()
         end
     end
 end)
-
---========================================================
 -- MODE 2
---========================================================
-
 task.spawn(function()
 
     while task.wait(CONFIG.ScanInterval) do
@@ -270,13 +262,7 @@ task.spawn(function()
         end
     end
 end)
-
---========================================================
 -- MODE 3
--- 22:55 GMT+7
--- Bỏ qua thứ 7
---========================================================
-
 task.spawn(function()
 
     if not CONFIG.Kick3.Enabled then
@@ -296,12 +282,10 @@ task.spawn(function()
             os.time() + (7 * 3600)
         )
 
-        -- Reset ngày mới
         if gmt7.hour == 0 and gmt7.min == 0 then
             triggeredToday = false
         end
 
-        -- Bỏ qua thứ 7
         if gmt7.wday == 7 then
             continue
         end
@@ -334,10 +318,111 @@ task.spawn(function()
         end
     end
 end)
---========================================================
--- STATUS
---========================================================
+-- MODE 4
+task.spawn(function()
 
+    while task.wait(CONFIG.ScanInterval) do
+
+        if AlreadyKicked then
+            return
+        end
+
+        if not CONFIG.Kick4.Enabled then
+            continue
+        end
+
+        local rank = GetRank()
+        local runsLeft = GetRunsLeft()
+        local inInstance = IsInInstance()
+
+        if rank >= CONFIG.Kick4.Rank
+            and runsLeft == 10
+            and inInstance
+        then
+
+            Log(
+                "MODE4 DETECTED",
+                "Rank =", rank,
+                "Runs =", runsLeft
+            )
+
+            local passed = VerifyCondition(
+                CONFIG.Kick4.VerifyTime,
+                function()
+
+                    return GetRank() >= CONFIG.Kick4.Rank
+                        and GetRunsLeft() == 10
+                        and IsInInstance()
+
+                end
+            )
+
+            if not passed then
+
+                Log("MODE4 VERIFY CANCELLED")
+
+                continue
+            end
+
+            local delayTime = math.random(
+                CONFIG.Kick4.RandomMin,
+                CONFIG.Kick4.RandomMax
+            )
+
+            Log(
+                "MODE4 RANDOM",
+                delayTime,
+                "seconds"
+            )
+
+            local start = tick()
+            local cancelled = false
+
+            while tick() - start < delayTime do
+
+                if AlreadyKicked then
+                    return
+                end
+
+                if GetRank() < CONFIG.Kick4.Rank
+                    or GetRunsLeft() ~= 10
+                    or not IsInInstance()
+                then
+
+                    cancelled = true
+
+                    Log("MODE4 RANDOM CANCELLED")
+
+                    break
+                end
+
+                task.wait(10)
+
+            end
+
+            if cancelled then
+                continue
+            end
+
+            if GetRank() >= CONFIG.Kick4.Rank
+                and GetRunsLeft() == 10
+                and IsInInstance()
+            then
+
+                KickPlayer(
+                    CONFIG.Kick4.KickMessage
+                )
+
+                return
+
+            end
+
+        end
+
+    end
+
+end)
+-- STATUS
 Log("SYSTEM LOADED")
 
 Log(
@@ -359,4 +444,10 @@ Log(
     CONFIG.Kick3.Enabled and "ON" or "OFF",
     "| Rank:",
     CONFIG.Kick3.Rank
+)
+Log(
+    "Kick4:",
+    CONFIG.Kick4.Enabled and "ON" or "OFF",
+    "| Rank:",
+    CONFIG.Kick4.Rank
 )
