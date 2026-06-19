@@ -52,7 +52,7 @@ local CONFIG = {
     	Rank = 16,
     	VerifyTime = 600,
     	RandomMin = 1,
-    	RandomMax = 600,
+    	RandomMax = 1,
     	KickMessage = "Reload Time Trial",
     }
 }
