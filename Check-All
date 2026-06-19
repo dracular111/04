@@ -396,7 +396,7 @@ task.spawn(function()
                     break
                 end
 
-                task.wait(10)
+                task.wait(1)
 
             end
 
