@@ -13,7 +13,7 @@ pcall(function()
         getgenv().fps_thread = nil
     end
 end)
-task.wait(5)
+task.wait(2)
 getgenv().FPS_START_TIME = getgenv().FPS_START_TIME or os.time()
 
 -- Cấu hình
