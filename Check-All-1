@@ -12,13 +12,14 @@ task.spawn(function()
 
         if rank >= 16
             and runsLeft == 10
-            and inInstance
+            and not inInstance
         then
 
             Log(
-                "EVENT DETECTED",
+                "TIME TRIAL CHECK START",
                 "Rank =", rank,
-                "Runs =", runsLeft
+                "Runs =", runsLeft,
+                "Instance =", inInstance
             )
 
             local passed = VerifyCondition(
@@ -27,7 +28,7 @@ task.spawn(function()
 
                     return GetRank() >= 16
                         and GetRunsLeft() == 10
-                        and IsInInstance()
+                        and not IsInInstance()
 
                 end
             )
@@ -35,8 +36,8 @@ task.spawn(function()
             if passed then
 
                 Log(
-                    "EVENT VERIFIED",
-                    "10 phút vẫn ở Instance",
+                    "TIME TRIAL VERIFIED",
+                    "10 phút không vào Event",
                     "=> Load config"
                 )
 
@@ -45,7 +46,7 @@ task.spawn(function()
                 return
             end
 
-            Log("EVENT CANCELLED")
+            Log("TIME TRIAL CANCELLED")
 
         end
     end
