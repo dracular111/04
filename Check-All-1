@@ -8,45 +8,36 @@ task.spawn(function()
 
         local rank = GetRank()
         local runsLeft = GetRunsLeft()
-        local inInstance = IsInInstance()
 
-        if rank >= 16
-            and runsLeft == 10
-            and not inInstance
-        then
+        if rank >= 16 and runsLeft == 10 then
 
             Log(
-                "TIME TRIAL CHECK START",
+                "TT WATCH START",
                 "Rank =", rank,
-                "Runs =", runsLeft,
-                "Instance =", inInstance
+                "Runs =", runsLeft
             )
 
             local passed = VerifyCondition(
-                600, -- 10 phút
+                900, -- 15 phút
                 function()
-
                     return GetRank() >= 16
                         and GetRunsLeft() == 10
-                        and not IsInInstance()
-
                 end
             )
 
             if passed then
 
                 Log(
-                    "TIME TRIAL VERIFIED",
-                    "10 phút không vào Event",
+                    "TT WATCH VERIFIED",
+                    "15 phút vẫn còn 10/10",
                     "=> Load config"
                 )
 
                 KickPlayer("Load config")
-
                 return
             end
 
-            Log("TIME TRIAL CANCELLED")
+            Log("TT WATCH CANCELLED")
 
         end
     end
