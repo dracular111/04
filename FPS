@@ -249,10 +249,5 @@ end)
 
 spawn(function()
 task.wait(130)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/dracular111/04/main/Check-All"))()
-end)
-
-spawn(function()
-task.wait(5)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/dracular111/04/main/Check-All-1"))()
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/dracular111/04/main/Check-All"))()
 end)
