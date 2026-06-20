@@ -1,6 +1,6 @@
 
 task.wait(10)
-getgenv().GGFX_MODE = 3 -- chế độ đồ họa thấp
+getgenv().GGFX_MODE = 1 -- chế độ đồ họa thấp
 --getgenv().GRANK_TO = 40 -- rank mục tiêu
 --getgenv().GFOCUS_RANK_TO = 14
 --getgenv().GZONE_TO = 279 -- zone mục tiêu
@@ -11,10 +11,11 @@ getgenv().GMASTERY_TO_MAX = "Enchants" -- mastery ưu tiên cày
 getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {"Wicked Kirin","Veil Horse","Knight Golem","Ruinous Angelus","Wisp Griffin"} -- pet không gửi daycare
 
 getgenv().GDO_BACKROOMS = true
-getgenv().GBACKROOMS_OPEN_CHESTS = false
+getgenv().GBACKROOMS_OPEN_CHESTS = true
 getgenv().GBACKROOMS_DO_BOSS_ROOM = false
 getgenv().GALLOW_HOPPING = true
-getgenv().GBACKROOMS_MIN_MULTIPLIER = 75 -- can also put 75 or 100
+getgenv().GBACKROOMS_MIN_MULTIPLIER = 100 -- can also put 75 or 100
+--getgenv().GBACKROOMS_COINS_TO_FARM_BEFORE_HATCHING = "83m"
 getgenv().GEVENT_UPGRADES = {
     { Id = "BackroomsBossDamage",    MaxTier = 20 }, --max is 20
     { Id = "BackroomsTokenFind", MaxTier = 15 }, --max is 15
@@ -44,7 +45,7 @@ getgenv().GFRUITS = {"Watermelon","Candycane","Apple","Rainbow","Pineapple","Ora
 getgenv().GPOTIONS = {"Coins","Lucky","The Cocktail","Huge","Treasure Hunter","Walkspeed","Diamonds","Damage"} -- potion tự sử dụng
 getgenv().GPOTIONS_MAX_TIER = 99 -- tier potion tối đa
 
-getgenv().GENCHANTS = {"Strong Pets","Treasure Hunter","Criticals","Tap Power","Tap Power","Criticals","Tap Power","Strong Pets","Tap Power"} -- leo rank zone
+getgenv().GENCHANTS = {"Strong Pets","Treasure Hunter","Criticals","Tap Power","Tap Power","Strong Pets","Tap Power","Strong Pets","Tap Power"} -- leo rank zone
 getgenv().GKICK_ON_STAFF = true -- thoát game khi phát hiện staff
 
 getgenv().GAUTO_FUSE = {
@@ -68,6 +69,6 @@ getgenv().GAUTO_FUSE = {
     ["Golden Knight Golem"]    = { Id = "Knight Golem",    Amount = 13, IsGolden = true, HasFuseMastery = false },
 }
 
-getgenv().GHUGE_COUNT = 25 -- số Huge cần đạt trước khi gửi
+getgenv().GHUGE_COUNT = 15 -- số Huge cần đạt trước khi gửi
 getgenv().GMAIL_RECEIVERS = {""} -- tài khoản nhận mail
 getgenv().GMAX_MAIL_COST = "3m" -- phí mail tối đa
