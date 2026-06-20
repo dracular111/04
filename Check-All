@@ -39,8 +39,8 @@ local CONFIG = {
     },
     -- MODE 2
     Kick2 = {
-        Enabled = false,
-        Rank = 16,
+        Enabled = true,
+        Rank = 20,
         VerifyTime = 180,
         KickMessage = "Change config 3",
     },
