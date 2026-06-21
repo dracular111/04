@@ -12,7 +12,6 @@ getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {"Wicked Kirin","Veil Horse","Knight 
 
 getgenv().GDO_BACKROOMS = true
 getgenv().GBACKROOMS_OPEN_CHESTS = true
-getgenv().GBACKROOMS_KICK_AFTER_CHESTS = false
 getgenv().GBACKROOMS_DO_BOSS_ROOM = true
 getgenv().GALLOW_HOPPING = false
 getgenv().GBACKROOMS_MIN_MULTIPLIER = 100 -- can also put 75 or 100
@@ -21,9 +20,6 @@ getgenv().GEVENT_UPGRADES = {
     { Id = "BackroomsBossDamage",     MaxTier = 25 },   -- max 25 (was 20)
     { Id = "BackroomsTokenFind",      MaxTier = 20 },   -- max 20 (was 15)
     { Id = "BackroomsExtraLootRoll",  MaxTier = 20 },   -- max 20 (was 10)
-    { Id = "BackroomsCoinMultiplier", MaxTier = 20 },   -- NEW v2
-    { Id = "BackroomsEggLuck",        MaxTier = 20 },   -- NEW v2
-    { Id = "BackroomsKeyFind",        MaxTier = 15 },   -- NEW v2
 }
 getgenv().GHATCH_ENCHANTS = {"Huge Hunter","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs"}
 getgenv().GINVENTORY_COUNTS = {
