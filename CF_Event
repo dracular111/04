@@ -14,16 +14,22 @@ getgenv().GDO_BACKROOMS = true
 getgenv().GBACKROOMS_OPEN_CHESTS = true
 getgenv().GBACKROOMS_DO_BOSS_ROOM = true
 getgenv().GALLOW_HOPPING = false
-getgenv().GBACKROOMS_MIN_MULTIPLIER = 100 -- can also put 75 or 100
+getgenv().GBACKROOMS_MIN_MULTIPLIER = 25 -- can also put 75 or 100
 --getgenv().GBACKROOMS_COINS_TO_FARM_BEFORE_HATCHING = "83m"
 getgenv().GEVENT_UPGRADES = {
-    { Id = "BackroomsBossDamage",    MaxTier = 20 }, --max is 20
-    { Id = "BackroomsTokenFind", MaxTier = 15 }, --max is 15
-    { Id = "BackroomsExtraLootRoll",  MaxTier = 10 }, --max is 10
+    { Id = "BackroomsBossDamage",     MaxTier = 25 },   -- max 25 (was 20)
+    { Id = "BackroomsTokenFind",      MaxTier = 20 },   -- max 20 (was 15)
+    { Id = "BackroomsExtraLootRoll",  MaxTier = 20 },   -- max 20 (was 10)
+    { Id = "BackroomsCoinMultiplier", MaxTier = 20 },   -- NEW v2
+    { Id = "BackroomsEggLuck",        MaxTier = 20 },   -- NEW v2
+    { Id = "BackroomsKeyFind",        MaxTier = 15 },   -- NEW v2
 }
 getgenv().GHATCH_ENCHANTS = {"Huge Hunter","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs"}
 getgenv().GINVENTORY_COUNTS = {
     ["BackroomDollars"] = {Class = "Currency", Id = "DaydreamCoins"},
+    ["Deep Backrooms Crayon Key"] = {Class = "Misc", Id = "Deep Backrooms Crayon Key"},
+    ["Chest Hunt Token"] = {Class = "Misc", Id = "Chest Hunt Token"},
+    ["Deep Chest Token"] = {Class = "Misc", Id = "Deep Chest Token"},
 }
 
 getgenv().GLOOTBOXES = {"Locked Hype Egg","Locked Hype Egg 3","Titanic Fantasy Present"}
