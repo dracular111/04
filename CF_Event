@@ -11,7 +11,7 @@ getgenv().GMASTERY_TO_MAX = "Enchants" -- mastery ưu tiên cày
 getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {"Wicked Kirin","Veil Horse","Knight Golem","Ruinous Angelus","Wisp Griffin"} -- pet không gửi daycare
 
 getgenv().GDO_BACKROOMS = true
-getgenv().GBACKROOMS_OPEN_CHESTS = true
+getgenv().GBACKROOMS_OPEN_CHESTS = false
 getgenv().GBACKROOMS_KICK_AFTER_CHESTS = false
 getgenv().GBACKROOMS_DO_BOSS_ROOM = true
 getgenv().GALLOW_HOPPING = false
