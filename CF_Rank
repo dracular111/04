@@ -29,7 +29,7 @@ getgenv().GINVENTORY_COUNTS = {
 --getgenv().GLOOTBOXES = {"Locked Hype Egg","Titanic Fantasy Present"}
 getgenv().GCOMBINE_KEYS = true -- tự ghép key
 
-getgenv().GAUTO_UPGRADE_PETS = true -- tự nâng cấp pet
+getgenv().GAUTO_UPGRADE_PETS = false -- tự nâng cấp pet
 getgenv().GOPEN_ITEMS_IN_BULK = true -- mở vật phẩm hàng loạt
 getgenv().GCONSUME_SEED_BAGS = true -- tự mở túi hạt giống
 getgenv().GCOLLECT_FREE_ITEMS = true -- nhận quà miễn phí
