@@ -244,10 +244,10 @@ task.spawn(function()
 end)
 
 spawn(function()
---loadstring(game:HttpGet("https://raw.githubusercontent.com/dracular111/03/main/A-UI-TimeTrial"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dracular111/03/main/A-UI-TimeTrial"))()
 end)
 
 spawn(function()
 task.wait(240)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/dracular111/04/main/Check-All"))()
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/dracular111/04/main/Check-All"))()
 end)
