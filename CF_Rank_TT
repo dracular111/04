@@ -16,7 +16,7 @@ getgenv().GMAX_ZONE_UPGRADE_COST = 200000 -- giới hạn gem nâng zone
 getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {"Wicked Kirin","Veil Horse","Knight Golem","Ruinous Angelus","Wisp Griffin"} -- pet không gửi daycare
 
 getgenv().GDO_TIME_TRIAL = true -- bật Time Trial
-getgenv().GTIME_TRIAL_MIN_TIME_TO_BOSS3 = 200 -- thời gian tối thiểu tới Boss 3
+getgenv().GTIME_TRIAL_MIN_TIME_TO_BOSS3 = 1 -- thời gian tối thiểu tới Boss 3
 getgenv().GTIME_TRIAL_CHEST_TO_CLAIM = 3 -- số rương nhận trong Time Trial
 getgenv().GTIME_TRIAL_HATCH_FIRST_SECONDS = 10 -- hatch trước khi chạy trial
 getgenv().GTIME_TRIAL_ENCHANTS = {"Tap Power","Criticals","Super Lightning","Lightning","Strong Pets","Strong Pets","Tap Power","Tap Power","Strong Pets"} -- enchant dùng trong Time Trial
