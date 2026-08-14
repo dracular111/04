@@ -1,4 +1,3 @@
-
 task.wait(10)
 getgenv().GGFX_MODE = 1 -- chế độ đồ họa thấp
 --getgenv().GRANK_TO = 40 -- rank mục tiêu
