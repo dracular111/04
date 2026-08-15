@@ -248,6 +248,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/dracular111/03/main/A
 end)
 
 spawn(function()
-task.wait(168)
+--task.wait(168)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/dracular111/04/main/Check-All"))()
 end)
