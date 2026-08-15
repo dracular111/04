@@ -11,7 +11,7 @@ getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {"Wicked Kirin","Veil Horse","Knight 
 
 getgenv().GDO_FIESTA  = true
 getgenv().GAUTO_RAID = true
-getgenv().GPINATA_MAX_LEVEL = 51 
+getgenv().GPINATA_MAX_LEVEL = 51
 getgenv().GHATCH_LOBBY = true  -- hatch for 10 seconds before entering a raid
 getgenv().GUSE_KEY_ON_CHEST = true -- to use the Fiesta Keys on the chest
 getgenv().GMAX_MAZE_LEVEL = 50000 -- untill what level it will be doing your max possible raid level, otherwise it does the minimum which is half.
@@ -30,10 +30,10 @@ getgenv().GINVENTORY_COUNTS = {
 getgenv().GTIMED_BOOSTS = 
 {
     { Id = "Fiesta Maze Damage Booster", MaxTier = 1 }, --Max is Tier 2
-    --{ Id = "Fiesta Maze XP Booster", MaxTier = 1 }, -- Max is Tier 2
+    { Id = "Fiesta Maze XP Booster", MaxTier = 1 }, -- Max is Tier 2
 }
 getgenv().GHATCH_ENCHANTS = {"Huge Hunter","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs"}
-getgenv().GLOOTBOXES = {"Locked Hype Egg","Locked Hype Egg 3","Titanic Fantasy Present", "Fiesta Gift", "Time Trial Gift 2"}
+getgenv().GLOOTBOXES = {"Locked Hype Egg","Locked Hype Egg 3","Titanic Fantasy Present", "Fiesta Gift", "Time Trial Gift 2", "Small Fantasy Gift"}
 
 --getgenv().GLOOTBOXES = {"Locked Hype Egg","Titanic Fantasy Present", "Fiesta Gift"}
 getgenv().GCOMBINE_KEYS = true -- tự ghép key
@@ -49,7 +49,8 @@ getgenv().GUSE_SPRINKLERS = true
 getgenv().GUSE_FLAGS = {"Fortune Flag","Hasty Flag","Diamonds Flag"} -- cờ được đặt tự động
 getgenv().GFRUITS = {"Watermelon","Candycane","Apple","Rainbow","Pineapple","Orange","Banana"} -- trái cây tự sử dụng
 
-getgenv().GPOTIONS = {"Coins","Lucky","The Cocktail","Huge","Treasure Hunter","Walkspeed","Diamonds","Damage"} -- potion tự sử dụng
+getgenv().GPOTIONS = {"Coins","Lucky","The Cocktail","Huge","Treasure Hunter","Walkspeed","Diamonds","Damage"} -- potion tự sử dụng FARM
+getgenv().GPOTIONS = {"Coins","Lucky","The Cocktail","Huge","Treasure Hunter","Walkspeed","Damage"} -- potion tự sử dụng event RAID
 getgenv().GPOTIONS_MAX_TIER = 99 -- tier potion tối đa
 
 getgenv().GENCHANTS = {"Strong Pets","Treasure Hunter","Criticals","Tap Power","Tap Power","Strong Pets","Tap Power","Strong Pets","Tap Power"} -- leo rank zone
