@@ -1,0 +1,29 @@
+task.spawn(function()
+
+    while task.wait(CONFIG.ScanInterval) do
+
+        if AlreadyKicked then
+            return
+        end
+
+        local rank = GetRank()
+        local runsLeft = GetRunsLeft()
+        local inInstance = IsInInstance()
+
+        if rank >= 16
+            and runsLeft <= 0
+            and not inInstance
+        then
+
+            Log(
+                "KICK DETECTED",
+                "Rank =", rank,
+                "Runs =", runsLeft
+            )
+
+            KickPlayer("Change config 3")
+
+            return
+        end
+    end
+end)
