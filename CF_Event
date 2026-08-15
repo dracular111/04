@@ -11,6 +11,7 @@ getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {"Wicked Kirin","Veil Horse","Knight 
 
 getgenv().GDO_FIESTA  = true
 getgenv().GAUTO_RAID = true
+getgenv().GPINATA_MAX_LEVEL = 10 
 getgenv().GHATCH_LOBBY = true  -- hatch for 10 seconds before entering a raid
 getgenv().GUSE_KEY_ON_CHEST = true -- to use the Fiesta Keys on the chest
 getgenv().GMAX_MAZE_LEVEL = 50000 -- untill what level it will be doing your max possible raid level, otherwise it does the minimum which is half.
