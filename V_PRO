@@ -1,6 +1,6 @@
 local sources = {
     { name = "FPS", url = "https://raw.githubusercontent.com/dracular111/04/main/FPS_PRO" },
-    { name = "Kick", url = "https://raw.githubusercontent.com/dracular111/04/main/Check_All_PRO" },
+    { name = "KICK", url = "https://raw.githubusercontent.com/dracular111/04/main/CHECK_ALL_PRO" },
 }
 
 --========================================================
