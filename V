@@ -1,5 +1,6 @@
 local sources = {
     { name = "FPS", url = "https://raw.githubusercontent.com/dracular111/04/main/FPS" },
+    { name = "Script_Mode", url = "https://raw.githubusercontent.com/dracular111/04/main/Script_Mode" },
     --{ name = "Kick", url = "https://raw.githubusercontent.com/dracular111/04/main/Check-All" },
 }
 
