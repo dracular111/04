@@ -19,7 +19,7 @@ getgenv().GEVENT_UPGRADES = {
     { Id = "FiestaDamage",    MaxTier = 53 }, --max is 53
     { Id = "FiestaSmashSpeed", MaxTier = 5 }, --max is 32
     { Id = "FiestaPets",  MaxTier = 46 }, --max is 46
-    { Id = "FiestaKeyDrops",  MaxTier = 5 }, --max is 21
+    { Id = "FiestaKeyDrops",  MaxTier = 31 }, --max is 21
 }
 getgenv().GINVENTORY_COUNTS = {
     ["Fiesta Candy"] = {Class = "Misc", Id = "Fiesta Candy"},
