@@ -10,7 +10,7 @@ getgenv().GMASTERY_TO_MAX = "Enchants" -- mastery ưu tiên cày
 getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {"Wicked Kirin","Veil Horse","Knight Golem","Ruinous Angelus","Wisp Griffin"} -- pet không gửi daycare
 
 getgenv().GDO_FIESTA  = true
-getgenv().GPINATA_MAX_LEVEL = 51
+getgenv().GPINATA_MAX_LEVEL = 91
 getgenv().GAUTO_RAID = true
 getgenv().GHATCH_LOBBY = false  -- hatch for 10 seconds before entering a raid
 getgenv().GUSE_KEY_ON_CHEST = true -- to use the Fiesta Keys on the chest
