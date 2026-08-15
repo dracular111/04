@@ -1,0 +1,424 @@
+local sources = {
+    { name = "FPS", url = "https://raw.githubusercontent.com/dracular111/04/main/FPS_PRO" },
+    { name = "Kick", url = "https://raw.githubusercontent.com/dracular111/04/main/Check_All_PRO" },
+}
+
+--========================================================
+-- SERVICES
+--========================================================
+
+local CoreGui = game:GetService("CoreGui")
+
+--========================================================
+-- CLEAN OLD LOADER UI
+--========================================================
+
+local oldGui = CoreGui:FindFirstChild("AutoUpdaterUI")
+if oldGui then
+    oldGui:Destroy()
+end
+
+--========================================================
+-- UI
+--========================================================
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "AutoUpdaterUI"
+ScreenGui.ResetOnSpawn = false
+ScreenGui.Parent = CoreGui
+
+local Frame = Instance.new("Frame")
+Frame.Size = UDim2.new(0, 180, 0, (#sources * 20) + 35)
+Frame.Position = UDim2.new(
+    1,
+    -190,
+    1,
+    -Frame.Size.Y.Offset - 6
+)
+Frame.BackgroundTransparency = 1
+Frame.BorderSizePixel = 0
+Frame.Parent = ScreenGui
+
+local UIListLayout = Instance.new("UIListLayout")
+UIListLayout.Padding = UDim.new(0, 3)
+UIListLayout.FillDirection = Enum.FillDirection.Vertical
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Left
+UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Top
+UIListLayout.Parent = Frame
+
+local Title = Instance.new("TextLabel")
+Title.Text = "🔁 Script Updater"
+Title.Font = Enum.Font.SourceSansBold
+Title.TextSize = 16
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1
+Title.Size = UDim2.new(1, -8, 0, 20)
+Title.TextXAlignment = Enum.TextXAlignment.Left
+Title.Parent = Frame
+
+--========================================================
+-- HELPERS
+--========================================================
+
+local function log(label, text)
+    if label and label.Parent then
+        label.Text = text
+    end
+end
+
+--========================================================
+-- FETCH
+--========================================================
+
+local function fetchCode(url)
+    local success, result = pcall(function()
+        return game:HttpGet(
+            url .. "?nocache=" .. tostring(os.clock())
+        )
+    end)
+
+    if success then
+        return result
+    end
+
+    return nil, result
+end
+
+--========================================================
+-- STOP OLD SCRIPT
+--========================================================
+
+local function stopOldScript(data)
+    if not data then
+        return
+    end
+
+    -- Tăng generation.
+    -- Mọi bản cũ đang chạy sẽ nhìn thấy khác generation
+    -- và tự thoát nếu script hỗ trợ UPDATE_STATE.
+    data.generation = (data.generation or 0) + 1
+
+    -- Gửi tín hiệu stop cho script cũ
+    if data.stop then
+        pcall(data.stop)
+        data.stop = nil
+    end
+
+    -- Nếu script cũ có đăng ký cleanup
+    if data.cleanup then
+        pcall(data.cleanup)
+        data.cleanup = nil
+    end
+end
+
+--========================================================
+-- SAFE RUN
+--========================================================
+
+local function safeRun(code, scriptName, data)
+    if type(code) ~= "string" or code == "" then
+        return false, "Code rỗng"
+    end
+
+    local f, err = loadstring(code)
+
+    if not f then
+        warn(
+            string.format(
+                "[Loader:%s] Lỗi biên dịch: %s",
+                scriptName,
+                tostring(err)
+            )
+        )
+
+        return false, err
+    end
+
+    -- Generation hiện tại của instance này
+    local generation = data.generation
+
+    -- Trạng thái stop dành cho script
+    local state = {
+        Running = true,
+        Generation = generation
+    }
+
+    -- Cho script truy cập trạng thái update
+    _G.__AUTO_UPDATER = _G.__AUTO_UPDATER or {}
+    _G.__AUTO_UPDATER[scriptName] = state
+
+    -- Hàm stop bản đang chạy
+    data.stop = function()
+        state.Running = false
+
+        -- Nếu Check-All có Stop riêng
+        if _G.PRO_KICK_SYSTEM
+            and type(_G.PRO_KICK_SYSTEM) == "table"
+            and type(_G.PRO_KICK_SYSTEM.Stop) == "function"
+        then
+            pcall(_G.PRO_KICK_SYSTEM.Stop)
+        end
+
+        -- Xóa state nếu vẫn là state hiện tại
+        if _G.__AUTO_UPDATER
+            and _G.__AUTO_UPDATER[scriptName] == state
+        then
+            _G.__AUTO_UPDATER[scriptName] = nil
+        end
+    end
+
+    local success, execErr = pcall(f)
+
+    if not success then
+        warn(
+            string.format(
+                "[Loader:%s] Lỗi khi chạy: %s",
+                scriptName,
+                tostring(execErr)
+            )
+        )
+
+        state.Running = false
+
+        if _G.__AUTO_UPDATER
+            and _G.__AUTO_UPDATER[scriptName] == state
+        then
+            _G.__AUTO_UPDATER[scriptName] = nil
+        end
+
+        return false, execErr
+    end
+
+    return true
+end
+
+--========================================================
+-- SCRIPT DATA
+--========================================================
+
+local scripts = {}
+
+for _, src in ipairs(sources) do
+
+    local lbl = Instance.new("TextLabel")
+
+    lbl.Font = Enum.Font.SourceSansBold
+    lbl.TextSize = 16
+    lbl.TextColor3 = Color3.fromRGB(255, 255, 255)
+    lbl.BackgroundTransparency = 1
+    lbl.Size = UDim2.new(1, -10, 0, 20)
+    lbl.TextXAlignment = Enum.TextXAlignment.Left
+    lbl.Text = src.name .. ": Đang tải..."
+    lbl.Parent = Frame
+
+    scripts[src.name] = {
+        url = src.url,
+        label = lbl,
+
+        lastCode = nil,
+        backup = nil,
+
+        lastUpdate = "Chưa cập nhật",
+
+        generation = 0,
+
+        stop = nil,
+        cleanup = nil,
+    }
+end
+
+--========================================================
+-- INITIAL LOAD
+--========================================================
+
+for name, data in pairs(scripts) do
+
+    task.spawn(function()
+
+        local code, err = fetchCode(data.url)
+
+        if not code then
+            log(
+                data.label,
+                name .. ": ❌ Không tải được (" ..
+                tostring(err) .. ")"
+            )
+            return
+        end
+
+        data.lastCode = code
+
+        local ok = safeRun(
+            code,
+            name,
+            data
+        )
+
+        if ok then
+
+            data.lastUpdate = os.date("%H:%M:%S")
+
+            log(
+                data.label,
+                string.format(
+                    "%s: ✅ Đã chạy • %s",
+                    name,
+                    data.lastUpdate
+                )
+            )
+
+        else
+
+            log(
+                data.label,
+                name .. ": ⚠️ Lỗi khi chạy"
+            )
+
+        end
+    end)
+end
+
+--========================================================
+-- AUTO UPDATE
+--========================================================
+
+task.spawn(function()
+
+    while task.wait(10) do
+
+        for name, data in pairs(scripts) do
+
+            task.wait(5)
+
+            local newCode, err = fetchCode(data.url)
+
+            if not newCode then
+
+                log(
+                    data.label,
+                    name ..
+                    ": ❌ Không tải được (" ..
+                    tostring(err) ..
+                    ")"
+                )
+
+                continue
+            end
+
+            --================================================
+            -- KHÔNG THAY ĐỔI
+            --================================================
+
+            if newCode == data.lastCode then
+
+                log(
+                    data.label,
+                    string.format(
+                        "%s: 🕒 • %s",
+                        name,
+                        data.lastUpdate
+                    )
+                )
+
+                continue
+            end
+
+            --================================================
+            -- PHÁT HIỆN BẢN MỚI
+            --================================================
+
+            log(
+                data.label,
+                name ..
+                ": ♻️ Bản mới → dừng bản cũ..."
+            )
+
+            -- Backup
+            local oldCode = data.lastCode
+            data.backup = oldCode
+
+            --================================================
+            -- STOP OLD
+            --================================================
+
+            stopOldScript(data)
+
+            --================================================
+            -- LOAD NEW
+            --================================================
+
+            local ok = safeRun(
+                newCode,
+                name,
+                data
+            )
+
+            --================================================
+            -- SUCCESS
+            --================================================
+
+            if ok then
+
+                data.lastCode = newCode
+                data.lastUpdate = os.date("%H:%M:%S")
+
+                log(
+                    data.label,
+                    string.format(
+                        "%s: ✅ Update thành công • %s",
+                        name,
+                        data.lastUpdate
+                    )
+                )
+
+            --================================================
+            -- FAILED → RESTORE
+            --================================================
+
+            else
+
+                log(
+                    data.label,
+                    name ..
+                    ": ⚠️ Bản mới lỗi → khôi phục bản cũ..."
+                )
+
+                -- Tăng generation lần nữa
+                stopOldScript(data)
+
+                if data.backup then
+
+                    local restoreOk = safeRun(
+                        data.backup,
+                        name,
+                        data
+                    )
+
+                    if restoreOk then
+
+                        data.lastCode = data.backup
+                        data.lastUpdate = os.date("%H:%M:%S")
+
+                        log(
+                            data.label,
+                            string.format(
+                                "%s: 🔙 Đã khôi phục • %s",
+                                name,
+                                data.lastUpdate
+                            )
+                        )
+
+                    else
+
+                        log(
+                            data.label,
+                            name ..
+                            ": ❌ Khôi phục thất bại"
+                        )
+
+                    end
+                end
+            end
+        end
+    end
+end)
