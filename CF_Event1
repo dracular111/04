@@ -1,6 +1,5 @@
-
 task.wait(10)
-getgenv().GGFX_MODE = 1 -- chế độ đồ họa thấp
+getgenv().GGFX_MODE = 3 -- chế độ đồ họa thấp
 --getgenv().GRANK_TO = 40 -- rank mục tiêu
 --getgenv().GFOCUS_RANK_TO = 14
 --getgenv().GZONE_TO = 279 -- zone mục tiêu
@@ -10,22 +9,30 @@ getgenv().GMAX_EQUIP_SLOTS = 99 -- mở tối đa slot pet equip
 getgenv().GMASTERY_TO_MAX = "Enchants" -- mastery ưu tiên cày
 getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {"Wicked Kirin","Veil Horse","Knight Golem","Ruinous Angelus","Wisp Griffin"} -- pet không gửi daycare
 
-getgenv().GDO_BACKROOMS = true
-getgenv().GBACKROOMS_OPEN_CHESTS = true
-getgenv().GBACKROOMS_DO_BOSS_ROOM = false
-getgenv().GALLOW_HOPPING = true
-getgenv().GBACKROOMS_MIN_MULTIPLIER = 100 -- can also put 75 or 100
---getgenv().GBACKROOMS_COINS_TO_FARM_BEFORE_HATCHING = "83m"
+getgenv().GDO_FIESTA  = true
+getgenv().GAUTO_RAID = true
+getgenv().GPINATA_MAX_LEVEL = 10 
+getgenv().GHATCH_LOBBY = true  -- hatch for 10 seconds before entering a raid
+getgenv().GUSE_KEY_ON_CHEST = true -- to use the Fiesta Keys on the chest
+getgenv().GMAX_MAZE_LEVEL = 50000 -- untill what level it will be doing your max possible raid level, otherwise it does the minimum which is half.
 getgenv().GEVENT_UPGRADES = {
-    { Id = "BackroomsBossDamage",    MaxTier = 20 }, --max is 20
-    { Id = "BackroomsTokenFind", MaxTier = 15 }, --max is 15
-    { Id = "BackroomsExtraLootRoll",  MaxTier = 10 }, --max is 10
+    { Id = "FiestaDamage",    MaxTier = 53 }, --max is 53
+    { Id = "FiestaSmashSpeed", MaxTier = 32 }, --max is 32
+    { Id = "FiestaPets",  MaxTier = 46 }, --max is 46
+    { Id = "FiestaKeyDrops",  MaxTier = 21 }, --max is 21
+}
+getgenv().GINVENTORY_COUNTS = {
+    ["Fiesta Candy"] = {Class = "Misc", Id = "Fiesta Candy"},
+    ["Fiesta Coins"] = {Class = "Currency", Id = "FiestaCoins"},
+    ["Fiesta Orbs"] = {Class = "Currency", Id = "FiestaOrbs"},
+    ["Fiesta Gift"] = {Class = "Lootbox", Id = "Fiesta Gift"},
+}
+getgenv().GTIMED_BOOSTS = 
+{
+    { Id = "Fiesta Maze Damage Booster", MaxTier = 1 }, --Max is Tier 2
+    --{ Id = "Fiesta Maze XP Booster", MaxTier = 1 }, -- Max is Tier 2
 }
 getgenv().GHATCH_ENCHANTS = {"Huge Hunter","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs"}
-getgenv().GINVENTORY_COUNTS = {
-    ["BackroomDollars"] = {Class = "Currency", Id = "DaydreamCoins"},
-}
-
 getgenv().GLOOTBOXES = {"Locked Hype Egg","Locked Hype Egg 3","Titanic Fantasy Present"}
 
 --getgenv().GLOOTBOXES = {"Locked Hype Egg","Titanic Fantasy Present"}
