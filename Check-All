@@ -47,7 +47,7 @@ local CONFIG = {
     -- MODE 3
     --  22:55 GMT+7
     Kick3 = {
-        Enabled = false,
+        Enabled = true,
         Rank = 16,
         KickMessage = "Reload config",
     }
