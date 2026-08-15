@@ -17,7 +17,7 @@ getgenv().GUSE_KEY_ON_CHEST = true -- to use the Fiesta Keys on the chest
 getgenv().GMAX_MAZE_LEVEL = 150000
 getgenv().GEVENT_UPGRADES = {
     { Id = "FiestaDamage",    MaxTier = 53 }, --max is 53
-    { Id = "FiestaSmashSpeed", MaxTier = 16 }, --max is 32
+    { Id = "FiestaSmashSpeed", MaxTier = 32 }, --max is 32
     { Id = "FiestaPets",  MaxTier = 46 }, --max is 46
     { Id = "FiestaKeyDrops",  MaxTier = 21 }, --max is 21
 }
