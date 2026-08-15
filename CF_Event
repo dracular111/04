@@ -33,7 +33,7 @@ getgenv().GTIMED_BOOSTS =
     --{ Id = "Fiesta Maze XP Booster", MaxTier = 1 }, -- Max is Tier 2
 }
 getgenv().GHATCH_ENCHANTS = {"Huge Hunter","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs"}
-getgenv().GLOOTBOXES = {"Locked Hype Egg","Locked Hype Egg 3","Titanic Fantasy Present, "Fiesta Gift", "Time Trial Gift 2"}
+getgenv().GLOOTBOXES = {"Locked Hype Egg","Locked Hype Egg 3","Titanic Fantasy Present", "Fiesta Gift", "Time Trial Gift 2"}
 
 --getgenv().GLOOTBOXES = {"Locked Hype Egg","Titanic Fantasy Present", "Fiesta Gift"}
 getgenv().GCOMBINE_KEYS = true -- tự ghép key
