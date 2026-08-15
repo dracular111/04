@@ -11,15 +11,15 @@ getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {"Wicked Kirin","Veil Horse","Knight 
 
 getgenv().GDO_FIESTA  = true
 getgenv().GAUTO_RAID = true
-getgenv().GPINATA_MAX_LEVEL = 10 
+getgenv().GPINATA_MAX_LEVEL = 21 
 getgenv().GHATCH_LOBBY = true  -- hatch for 10 seconds before entering a raid
 getgenv().GUSE_KEY_ON_CHEST = true -- to use the Fiesta Keys on the chest
 getgenv().GMAX_MAZE_LEVEL = 50000 -- untill what level it will be doing your max possible raid level, otherwise it does the minimum which is half.
 getgenv().GEVENT_UPGRADES = {
     { Id = "FiestaDamage",    MaxTier = 53 }, --max is 53
-    { Id = "FiestaSmashSpeed", MaxTier = 32 }, --max is 32
+    { Id = "FiestaSmashSpeed", MaxTier = 5 }, --max is 32
     { Id = "FiestaPets",  MaxTier = 46 }, --max is 46
-    { Id = "FiestaKeyDrops",  MaxTier = 21 }, --max is 21
+    { Id = "FiestaKeyDrops",  MaxTier = 5 }, --max is 21
 }
 getgenv().GINVENTORY_COUNTS = {
     ["Fiesta Candy"] = {Class = "Misc", Id = "Fiesta Candy"},
@@ -33,9 +33,9 @@ getgenv().GTIMED_BOOSTS =
     --{ Id = "Fiesta Maze XP Booster", MaxTier = 1 }, -- Max is Tier 2
 }
 getgenv().GHATCH_ENCHANTS = {"Huge Hunter","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs"}
-getgenv().GLOOTBOXES = {"Locked Hype Egg","Locked Hype Egg 3","Titanic Fantasy Present"}
+getgenv().GLOOTBOXES = {"Locked Hype Egg","Locked Hype Egg 3","Titanic Fantasy Present", "Fiesta Gift", "Time Trial Gift 2"}
 
---getgenv().GLOOTBOXES = {"Locked Hype Egg","Titanic Fantasy Present"}
+--getgenv().GLOOTBOXES = {"Locked Hype Egg","Titanic Fantasy Present", "Fiesta Gift"}
 getgenv().GCOMBINE_KEYS = true -- tự ghép key
 
 getgenv().GAUTO_UPGRADE_PETS = true -- tự nâng cấp pet
