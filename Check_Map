@@ -1,0 +1,96 @@
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local CoreGui = game:GetService("CoreGui")
+local LocalPlayer = Players.LocalPlayer
+local InstancingCmds = require(ReplicatedStorage.Library.Client.InstancingCmds)
+local UIScale
+local ViewportConnection
+local function ShowLocationUI(LocationName)
+    local old = CoreGui:FindFirstChild("LOCATION_UI")
+    if old then
+        old:Destroy()
+    end
+    if ViewportConnection then
+        pcall(function()
+            ViewportConnection:Disconnect()
+        end)
+        ViewportConnection = nil
+    end
+    local gui = Instance.new("ScreenGui")
+    gui.Name = "LOCATION_UI"
+    gui.IgnoreGuiInset = true
+    gui.ResetOnSpawn = false
+    gui.ZIndexBehavior = Enum.ZIndexBehavior.Global
+    gui.DisplayOrder = 999999999
+    gui.Parent = CoreGui
+    UIScale = Instance.new("UIScale")
+    UIScale.Parent = gui
+    local function UpdateScale()
+        local cam = workspace.CurrentCamera
+        if cam then
+            UIScale.Scale = (cam.ViewportSize.Y / 1080) * 1.6
+        end
+    end
+    UpdateScale()
+    if workspace.CurrentCamera then
+        ViewportConnection = workspace.CurrentCamera:GetPropertyChangedSignal("ViewportSize"):Connect(UpdateScale)
+    end
+    local FrameColor
+    if LocationName == "EVENT" then
+        FrameColor = Color3.fromRGB(0,170,70)
+    else
+        FrameColor = Color3.fromRGB(40,110,210)
+    end
+    local frame = Instance.new("Frame")
+    frame.ZIndex = 999999999
+    frame.Size = UDim2.new(0,180,0,46)
+    frame.AnchorPoint = Vector2.new(1,0)
+    frame.Position = UDim2.new(1,-15,0,15)
+    frame.BackgroundColor3 = FrameColor
+    frame.BackgroundTransparency = 0
+    frame.BorderSizePixel = 0
+    frame.Parent = gui
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0,8)
+    corner.Parent = frame
+    local stroke = Instance.new("UIStroke")
+    stroke.Color = Color3.new(1,1,1)
+    stroke.Thickness = 2
+    stroke.Parent = frame
+    local Label = Instance.new("TextLabel")
+    Label.BackgroundTransparency = 1
+    Label.Size = UDim2.new(1,-16,1,0)
+    Label.Position = UDim2.new(0,8,0,0)
+    Label.Font = Enum.Font.GothamBold
+    Label.TextSize = 23
+    Label.TextColor3 = Color3.fromRGB(255,255,255)
+    Label.TextStrokeTransparency = 0.3
+    Label.TextStrokeColor3 = Color3.new(0,0,0)
+    Label.TextXAlignment = Enum.TextXAlignment.Center
+    Label.TextYAlignment = Enum.TextYAlignment.Center
+    Label.Text = LocationName
+    Label.ZIndex = 999999999
+    Label.Parent = frame
+end
+local function GetLocation()
+    local ok, result = pcall(function()
+        return InstancingCmds.IsInInstance()
+    end)
+    if ok and result == true then
+        return "EVENT"
+    end
+    return "MAP"
+end
+local CurrentLocation = GetLocation()
+ShowLocationUI(CurrentLocation)
+print("[PS99 LOCATION]", CurrentLocation)
+task.spawn(function()
+    while task.wait(3) do
+        local NewLocation = GetLocation()
+        if NewLocation ~= CurrentLocation then
+            CurrentLocation = NewLocation
+            ShowLocationUI(CurrentLocation)
+            print("[PS99 LOCATION CHANGED]", CurrentLocation)
+        end
+    end
+end)
