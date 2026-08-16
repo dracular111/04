@@ -12,14 +12,24 @@ getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {"Wicked Kirin","Veil Horse","Knight 
 getgenv().GDO_FIESTA  = true
 getgenv().GPINATA_MAX_LEVEL = 91
 getgenv().GAUTO_RAID = true
+getgenv().GDO_AUTO_ETERNAL_MAZE = true
 getgenv().GHATCH_LOBBY = true  -- hatch for 10 seconds before entering a raid
 getgenv().GUSE_KEY_ON_CHEST = true -- to use the Fiesta Keys on the chest
 getgenv().GMAX_MAZE_LEVEL = 150000
+
 getgenv().GEVENT_UPGRADES = {
-    { Id = "FiestaDamage",    MaxTier = 53 }, --max is 53
-    { Id = "FiestaSmashSpeed", MaxTier = 32 }, --max is 32
-    { Id = "FiestaPets",  MaxTier = 46 }, --max is 46
-    { Id = "FiestaKeyDrops",  MaxTier = 21 }, --max is 21
+    { Id = "FiestaDamage",              MaxTier = 53 }, --max is 53
+    { Id = "FiestaSmashSpeed",          MaxTier = 32 }, --max is 32
+    { Id = "FiestaPets",                MaxTier = 46 }, --max is 46
+    { Id = "FiestaKeyDrops",            MaxTier = 21 }, --max is 21
+    { Id = "FiestaBetterLoot",          MaxTier = 15 }, --max is 15
+    { Id = "FiestaXP",                  MaxTier = 30 }, --max is 30
+    { Id = "FiestaTitanicChest",        MaxTier = 15 }, --max is 15
+    { Id = "FiestaMoreCurrency",        MaxTier = 10 }, --max is 10
+    { Id = "FiestaPetSpeed",            MaxTier = 15 }, --max is 15
+    { Id = "FiestaBossDamage",          MaxTier = 20 }, --max is 20
+    { Id = "FiestaBossHugeChances",     MaxTier = 25 }, --max is 25
+    { Id = "FiestaBossTitanicChances",  MaxTier = 25 }, --max is 25
 }
 getgenv().GINVENTORY_COUNTS = {
     ["Fiesta Candy"] = {Class = "Misc", Id = "Fiesta Candy"},
