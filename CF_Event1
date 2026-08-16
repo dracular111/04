@@ -13,6 +13,7 @@ getgenv().GDO_FIESTA  = true
 getgenv().GPINATA_MAX_LEVEL = 91
 getgenv().GAUTO_RAID = true
 getgenv().GDO_AUTO_ETERNAL_MAZE = true
+getgenv().GDO_CURSED = true
 getgenv().GHATCH_LOBBY = true  -- hatch for 10 seconds before entering a raid
 getgenv().GUSE_KEY_ON_CHEST = true -- to use the Fiesta Keys on the chest
 getgenv().GMAX_MAZE_LEVEL = 150000
