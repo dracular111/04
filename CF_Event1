@@ -13,7 +13,6 @@ getgenv().GDO_FIESTA  = true
 getgenv().GPINATA_MAX_LEVEL = 91
 getgenv().GAUTO_RAID = true
 getgenv().GDO_AUTO_ETERNAL_MAZE = true
---getgenv().GDO_CURSED = true
 getgenv().GHATCH_LOBBY = true  -- hatch for 10 seconds before entering a raid
 getgenv().GUSE_KEY_ON_CHEST = true -- to use the Fiesta Keys on the chest
 getgenv().GMAX_MAZE_LEVEL = 150000
@@ -25,9 +24,9 @@ getgenv().GEVENT_UPGRADES = {
     { Id = "FiestaKeyDrops",            MaxTier = 21 }, --max is 21
     { Id = "FiestaBetterLoot",          MaxTier = 15 }, --max is 15
     { Id = "FiestaXP",                  MaxTier = 30 }, --max is 30
-    --{ Id = "FiestaTitanicChest",        MaxTier = 15 }, --max is 15
-    --{ Id = "FiestaMoreCurrency",        MaxTier = 1 }, --max is 10
-    { Id = "FiestaPetSpeed",            MaxTier = 1 }, --max is 15
+    { Id = "FiestaTitanicChest",        MaxTier = 15 }, --max is 15
+    { Id = "FiestaMoreCurrency",        MaxTier = 10 }, --max is 10
+    { Id = "FiestaPetSpeed",            MaxTier = 15 }, --max is 15
     { Id = "FiestaBossDamage",          MaxTier = 20 }, --max is 20
     { Id = "FiestaBossHugeChances",     MaxTier = 25 }, --max is 25
     { Id = "FiestaBossTitanicChances",  MaxTier = 25 }, --max is 25
@@ -61,7 +60,7 @@ getgenv().GUSE_FLAGS = {"Fortune Flag","Hasty Flag","Diamonds Flag"} -- cờ đ�
 getgenv().GFRUITS = {"Watermelon","Candycane","Apple","Rainbow","Pineapple","Orange","Banana"} -- trái cây tự sử dụng
 
 getgenv().GPOTIONS = {"Coins","Lucky","The Cocktail","Huge","Treasure Hunter","Walkspeed","Diamonds","Damage"} -- potion tự sử dụng FARM
---getgenv().GPOTIONS = {"Coins","Lucky","The Cocktail","Huge","Treasure Hunter","Walkspeed","Damage"} -- potion tự sử dụng event RAID
+getgenv().GPOTIONS = {"Coins","Lucky","The Cocktail","Huge","Treasure Hunter","Walkspeed","Damage"} -- potion tự sử dụng event RAID
 getgenv().GPOTIONS_MAX_TIER = 99 -- tier potion tối đa
 
 getgenv().GENCHANTS = {"Strong Pets","Treasure Hunter","Criticals","Tap Power","Tap Power","Strong Pets","Tap Power","Strong Pets","Tap Power"} -- leo rank zone
