@@ -7,7 +7,7 @@ getgenv().GGFX_MODE = 1 -- chế độ đồ họa thấp
 getgenv().GMAX_EGG_SLOTS = 99 -- mở tối đa slot trứng
 getgenv().GMAX_EQUIP_SLOTS = 99 -- mở tối đa slot pet equip
 getgenv().GMASTERY_TO_MAX = "Enchants" -- mastery ưu tiên cày
-getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {"Wicked Kirin","Veil Horse","Knight Golem","Ruinous Angelus","Wisp Griffin"} -- pet không gửi daycare
+getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {"Wicked Kirin","Veil Horse","Knight Golem","Ruinous Angelus","Wisp Griffin","Alebrije Crocodile","Sugar Skull Owl","Sugar Skull Skunk","Sombrero Axolotl","Sombrero Chihuahua","Sombrero Corgi","Pinata Monkey","Pinata Dog","Pinata Cat"} -- pet không gửi daycare
 
 getgenv().GDO_FIESTA  = true
 getgenv().GPINATA_MAX_LEVEL = 91
