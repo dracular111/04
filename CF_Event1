@@ -1,5 +1,5 @@
 task.wait(10)
-getgenv().GGFX_MODE = 3 -- chế độ đồ họa thấp
+getgenv().GGFX_MODE = 1 -- chế độ đồ họa thấp
 --getgenv().GRANK_TO = 40 -- rank mục tiêu
 --getgenv().GFOCUS_RANK_TO = 14
 --getgenv().GZONE_TO = 279 -- zone mục tiêu
@@ -7,7 +7,7 @@ getgenv().GGFX_MODE = 3 -- chế độ đồ họa thấp
 getgenv().GMAX_EGG_SLOTS = 99 -- mở tối đa slot trứng
 getgenv().GMAX_EQUIP_SLOTS = 99 -- mở tối đa slot pet equip
 getgenv().GMASTERY_TO_MAX = "Enchants" -- mastery ưu tiên cày
-getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {"Wicked Kirin","Veil Horse","Knight Golem","Ruinous Angelus","Wisp Griffin"} -- pet không gửi daycare
+getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {"Wicked Kirin","Veil Horse","Knight Golem","Ruinous Angelus","Wisp Griffin",} -- pet không gửi daycare
 
 getgenv().GDO_FIESTA  = true
 getgenv().GPINATA_MAX_LEVEL = 91
@@ -61,7 +61,7 @@ getgenv().GUSE_FLAGS = {"Fortune Flag","Hasty Flag","Diamonds Flag"} -- cờ đ�
 getgenv().GFRUITS = {"Watermelon","Candycane","Apple","Rainbow","Pineapple","Orange","Banana"} -- trái cây tự sử dụng
 
 getgenv().GPOTIONS = {"Coins","Lucky","The Cocktail","Huge","Treasure Hunter","Walkspeed","Diamonds","Damage"} -- potion tự sử dụng FARM
-getgenv().GPOTIONS = {"Coins","Lucky","The Cocktail","Huge","Treasure Hunter","Walkspeed","Damage"} -- potion tự sử dụng event RAID
+--getgenv().GPOTIONS = {"Coins","Lucky","The Cocktail","Huge","Treasure Hunter","Walkspeed","Damage"} -- potion tự sử dụng event RAID
 getgenv().GPOTIONS_MAX_TIER = 99 -- tier potion tối đa
 
 getgenv().GENCHANTS = {"Strong Pets","Treasure Hunter","Criticals","Tap Power","Tap Power","Strong Pets","Tap Power","Strong Pets","Tap Power"} -- leo rank zone
