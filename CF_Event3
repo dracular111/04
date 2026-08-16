@@ -1,0 +1,35 @@
+getgenv().GGFX_MODE = 3
+getgenv().GDO_FIESTA  = true
+getgenv().GDO_CURSED = true
+getgenv().GDO_AUTO_ETERNAL_MAZE = true
+getgenv().GPINATA_MAX_LEVEL = 91
+getgenv().GAUTO_RAID = true
+getgenv().GHATCH_LOBBY = false  -- hatch for 10 seconds before entering a raid
+getgenv().GUSE_KEY_ON_CHEST = true -- to use the Fiesta Keys on the chest
+getgenv().GMAX_MAZE_LEVEL = 150000 -- untill what level it will be doing your max possible raid level, otherwise it does the minimum which is half.
+
+getgenv().GTIMED_BOOSTS = 
+{
+    { Id = "Fiesta Maze Damage Booster", MaxTier = 1 }, --max is 3
+    { Id = "Fiesta Maze XP Booster", MaxTier = 1 }, --max is 3
+}
+getgenv().GEVENT_UPGRADES = {
+    { Id = "FiestaDamage",              MaxTier = 53 }, --max is 53
+    { Id = "FiestaSmashSpeed",          MaxTier = 32 }, --max is 32
+    { Id = "FiestaPets",                MaxTier = 46 }, --max is 46
+    { Id = "FiestaKeyDrops",            MaxTier = 21 }, --max is 21
+    { Id = "FiestaBetterLoot",          MaxTier = 15 }, --max is 15
+    { Id = "FiestaXP",                  MaxTier = 30 }, --max is 30
+    { Id = "FiestaTitanicChest",        MaxTier = 15 }, --max is 15
+    { Id = "FiestaMoreCurrency",        MaxTier = 10 }, --max is 10
+    { Id = "FiestaPetSpeed",            MaxTier = 15 }, --max is 15
+    { Id = "FiestaBossDamage",          MaxTier = 20 }, --max is 20
+    { Id = "FiestaBossHugeChances",     MaxTier = 25 }, --max is 25
+    { Id = "FiestaBossTitanicChances",  MaxTier = 25 }, --max is 25
+}
+getgenv().GINVENTORY_COUNTS = {
+    ["Fiesta Key"] = {Class = "Misc", Id = "Fiesta Key"},
+    ["Fiesta Coins"] = {Class = "Currency", Id = "FiestaCoins"},
+    ["Fiesta Orbs"] = {Class = "Currency", Id = "FiestaOrbs"},
+    ["Fiesta Gift"] = {Class = "Lootbox", Id = "Fiesta Gift"},
+}
