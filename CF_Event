@@ -26,7 +26,7 @@ getgenv().GEVENT_UPGRADES = {
     { Id = "FiestaXP",                  MaxTier = 30 }, --max is 30
     { Id = "FiestaTitanicChest",        MaxTier = 15 }, --max is 15
     { Id = "FiestaMoreCurrency",        MaxTier = 10 }, --max is 10
-    { Id = "FiestaPetSpeed",            MaxTier = 15 }, --max is 15
+    --{ Id = "FiestaPetSpeed",            MaxTier = 15 }, --max is 15
     { Id = "FiestaBossDamage",          MaxTier = 20 }, --max is 20
     { Id = "FiestaBossHugeChances",     MaxTier = 25 }, --max is 25
     { Id = "FiestaBossTitanicChances",  MaxTier = 25 }, --max is 25
