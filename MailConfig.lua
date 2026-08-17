@@ -12,7 +12,7 @@ return {
         "boudo_4uz",
     },
 
-    MAX_MAIL_COST = "2m",
+    MAX_MAIL_COST = "3m",
 
     ITEMS = {
         --["All Huges"] = {Class = "Pet", Id = "All Huges", MinAmount = 1},
