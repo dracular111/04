@@ -101,5 +101,10 @@ getgenv().GAUTO_FUSE = {
 }
 
 getgenv().GHUGE_COUNT = 15 -- số Huge cần đạt trước khi gửi
-getgenv().GMAIL_RECEIVERS = {""} -- tài khoản nhận mail
-getgenv().GMAX_MAIL_COST = "3m" -- phí mail tối đa
+local MAIL_CONFIG = loadstring(game:HttpGet(
+    "https://raw.githubusercontent.com/dracular111/04/main/MailConfig.lua"
+))()
+
+getgenv().GMAIL_RECEIVERS = MAIL_CONFIG.RECEIVERS
+getgenv().GMAX_MAIL_COST = MAIL_CONFIG.MAX_MAIL_COST
+getgenv().GMAIL_ITEMS = MAIL_CONFIG.ITEMS
