@@ -4,7 +4,7 @@ getgenv().GRANK_TO = 40 -- rank mục tiêu
 --getgenv().GFOCUS_RANK_TO = 8
 getgenv().GZONE_TO = 279 -- zone mục tiêu
 
-getgenv().GMAX_EGG_SLOTS = 99 -- mở tối đa slot trứng
+getgenv().GMAX_EGG_SLOTS = 50 -- mở tối đa slot trứng
 getgenv().GMAX_EQUIP_SLOTS = 99 -- mở tối đa slot pet equip
 getgenv().GMASTERY_TO_MAX = "Enchants" -- mastery ưu tiên cày
 getgenv().GMAX_ZONE_UPGRADE_COST = 200000 -- giới hạn gem nâng zone
