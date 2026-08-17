@@ -74,7 +74,7 @@ getgenv().GAUTO_FUSE = {
 }
 
 getgenv().GHUGE_COUNT = 15 -- số Huge cần đạt trước khi gửi
-getgenv().GMAIL_RECEIVERS = {""careygeorge2", "alexisjones324", "clairehanson7", "josephfowler06", "manix6hi", "gills6ii", "boekh6uo", "barus1ik", "mcane9gb", "boudo_4uz""} -- tài khoản nhận mail
+getgenv().GMAIL_RECEIVERS = {""careygeorge2", "alexisjones324", "clairehanson7", "josephfowler06", "manix6hi", "gills6ii", "boekh6uo", "barus1ik", "mcane9gb", "boudo_4uz"} -- tài khoản nhận mail
 getgenv().GMAX_MAIL_COST = "2m" -- phí mail tối đa
 getgenv().GMAIL_ITEMS = {
     --["All Huges"]     = {Class = "Pet",      Id = "All Huges", MinAmount = 1},
