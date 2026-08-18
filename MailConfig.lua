@@ -20,8 +20,16 @@ return {
         ["Send Diamonds"]        = {Class = "Currency", Id = "Diamonds", KeepAmount = "3m", MinAmount = "30m"},
 
         ["Gargantuan Machine Hippomelon Egg"] = {Class = "Egg", Id = "Gargantuan Machine Hippomelon Egg", MinAmount = 1, KeepAmount = 0},
-        ["Exclusive Origami Egg"] = {Class = "Egg", Id = "Exclusive Origami Egg", MinAmount = 1, KeepAmount = 0},
-        ["Exclusive Space Egg"]   = {Class = "Egg", Id = "Exclusive Space Egg", MinAmount = 1, KeepAmount = 0},
+        ["Exclusive Egg 55"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        ["Exclusive Egg 56"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        ["Exclusive Egg 57"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        ["Exclusive Egg 58"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        ["Exclusive Egg 59"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        ["Exclusive Egg 60"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        ["Exclusive Egg 61"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        ["Exclusive Egg 62"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        ["Exclusive Egg 63"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        
         ["Hype Egg 3"]            = {Class = "Lootbox", Id = "Hype Egg 3", MinAmount = 1, KeepAmount = 0},
 
         ["MVP Key"]              = {Class = "Misc", Id = "MVP Key", MinAmount = 50, KeepAmount = 0},
