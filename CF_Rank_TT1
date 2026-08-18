@@ -4,92 +4,62 @@ getgenv().GRANK_TO = 40 -- rank mục tiêu
 --getgenv().GFOCUS_RANK_TO = 8
 getgenv().GZONE_TO = 279 -- zone mục tiêu
 
-getgenv().GMAX_EGG_SLOTS = 99 -- mở tối đa slot trứng
+getgenv().GMAX_EGG_SLOTS = 50 -- mở tối đa slot trứng
 getgenv().GMAX_EQUIP_SLOTS = 99 -- mở tối đa slot pet equip
 getgenv().GMASTERY_TO_MAX = "Enchants" -- mastery ưu tiên cày
 getgenv().GMAX_ZONE_UPGRADE_COST = 200000 -- giới hạn gem nâng zone
-getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {"Wicked Kirin","Veil Horse","Knight Golem","Ruinous Angelus","Wisp Griffin"} -- pet không gửi daycare
-
+getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {
+    "Wicked Kirin",
+    "Veil Horse",
+    "Knight Golem",
+    "Ruinous Angelus",
+    "Wisp Griffin",
+    "Alebrije Crocodile",
+    "Sugar Skull Owl",
+    "Sugar Skull Skunk",
+    "Sombrero Axolotl",
+    "Sombrero Chihuahua",
+    "Sombrero Corgi",
+    "Pinata Monkey",
+    "Pinata Dog",
+    "Pinata Cat"
+}
 getgenv().GDO_TIME_TRIAL = true -- bật Time Trial
 getgenv().GTIME_TRIAL_MIN_TIME_TO_BOSS3 = 1 -- thời gian tối thiểu tới Boss 3
 getgenv().GTIME_TRIAL_CHEST_TO_CLAIM = 3 -- số rương nhận trong Time Trial
 getgenv().GTIME_TRIAL_HATCH_FIRST_SECONDS = 10 -- hatch trước khi chạy trial
 getgenv().GTIME_TRIAL_ENCHANTS = {"Tap Power","Criticals","Super Lightning","Lightning","Strong Pets","Strong Pets","Tap Power","Tap Power","Strong Pets"} -- enchant dùng trong Time Trial
 
-getgenv().GLOOTBOXES = {"Locked Hype Egg","Locked Hype Egg 3","Titanic Fantasy Present"}
-
---getgenv().GLOOTBOXES = {"Locked Hype Egg","Titanic Fantasy Present"}
+getgenv().GHATCH_ENCHANTS = {"Huge Hunter","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs"}
+getgenv().GENCHANTS = {"Strong Pets","Treasure Hunter","Criticals","Tap Power","Tap Power","Strong Pets","Tap Power","Strong Pets","Tap Power"} -- leo rank zone
+getgenv().GLOOTBOXES = {"Locked Hype Egg","Locked Hype Egg 3","Titanic Fantasy Present","Fiesta Gift"}
 getgenv().GCOMBINE_KEYS = true -- tự ghép key
-
 getgenv().GAUTO_UPGRADE_PETS = true -- tự nâng cấp pet
 getgenv().GOPEN_ITEMS_IN_BULK = true -- mở vật phẩm hàng loạt
 getgenv().GCONSUME_SEED_BAGS = true -- tự mở túi hạt giống
 getgenv().GCOLLECT_FREE_ITEMS = true -- nhận quà miễn phí
 
-getgenv().GUSE_ULTIMATES = {"UFO","Tsunami","Tornado","Pet Surge","Chest Spell","Ground Pound"} -- ultimate được phép dùng
 getgenv().GUSE_SPRINKLERS = true
---getgenv().GUSE_FLAGS = {"Strength Flag","Hasty Flag","Rainbow Flag","Shiny Flag"}
+getgenv().GUSE_ULTIMATES = {"UFO","Tsunami","Tornado","Pet Surge","Chest Spell","Ground Pound"} -- ultimate được phép dùng
 getgenv().GUSE_FLAGS = {"Fortune Flag","Hasty Flag","Diamonds Flag"} -- cờ được đặt tự động
 getgenv().GFRUITS = {"Watermelon","Candycane","Apple","Rainbow","Pineapple","Orange","Banana"} -- trái cây tự sử dụng
-
-getgenv().GPOTIONS = {"Coins","Lucky","The Cocktail","Huge","Treasure Hunter","Walkspeed","Diamonds","Damage"} -- potion tự sử dụng
+getgenv().GPOTIONS = {"Coins","Lucky","The Cocktail","Huge","Treasure Hunter","Walkspeed","Diamonds","Damage"} -- potion tự sử dụng FARM
 getgenv().GPOTIONS_MAX_TIER = 99 -- tier potion tối đa
-
-getgenv().GENCHANTS = {"Strong Pets","Treasure Hunter","Criticals","Tap Power","Diamonds","Lucky Eggs","Tap Power","Strong Pets","Tap Power"} -- leo rank zone
 getgenv().GKICK_ON_STAFF = true -- thoát game khi phát hiện staff
 
 getgenv().GAUTO_FUSE = {
-    -- no mastery 81% KG, 16% Gold KG
-    -- mastery: 97% RB KG
-    ["RB Wisp Griffin"]        = { Id = "Wisp Griffin",    Amount = 45, IsRainbow = true },
-    -- no mastery: 78% Gold Knight Golem, 8 % RB Knight Golem
-    ["RB Ruinous Angelus"]     = { Id = "Ruinous Angelus", Amount = 64, IsRainbow = true, HasFuseMastery = false},
-    -- mastery: 97% RB Knight Golem
-    ["RB Ruinous Angelus 2"]     = { Id = "Ruinous Angelus", Amount = 28, IsRainbow = true, HasFuseMastery = true },
-
-    --all these make RB Wisp griffins, only needed if we run out of them somehow, but how to check?
-   -- ["Normal Ruinous Angelus"] = { Id = "Ruinous Angelus", Amount = 2, HasFuseMastery = true },
-   -- ["Normal Wisp Griffin"]    = { Id = "Wisp Griffin",    Amount = 2,                   HasFuseMastery = true },
-   -- ["Golden Wisp Griffin"]    = { Id = "Wisp Griffin",    Amount = 2, IsGolden = true,  HasFuseMastery = true },
-
-    -- ── mastery OFF only ─────────────────────────────────────────
-    -- no mastery: 78% gold KG, but 10% Veil Horse, 8% RB Knight Golem
-    ["Normal Knight Golem"]    = { Id = "Knight Golem",    Amount = 37,                  HasFuseMastery = false },
-    -- no mastery: 78% gold KG, 10% Veil horse, 8% RB Knight golem
-    ["Golden Knight Golem"]    = { Id = "Knight Golem",    Amount = 13, IsGolden = true, HasFuseMastery = false },
+    ["RB Wisp Griffin"]     = {Id = "Wisp Griffin", Amount = 45, IsRainbow = true},
+    ["RB Ruinous Angelus"]  = {Id = "Ruinous Angelus", Amount = 64, IsRainbow = true, HasFuseMastery = false},
+    ["RB Ruinous Angelus 2"] = {Id = "Ruinous Angelus", Amount = 28, IsRainbow = true, HasFuseMastery = true},
+    ["Normal Knight Golem"] = {Id = "Knight Golem", Amount = 37, HasFuseMastery = false},
+    ["Golden Knight Golem"] = {Id = "Knight Golem", Amount = 13, IsGolden = true, HasFuseMastery = false},
 }
 
 getgenv().GHUGE_COUNT = 15 -- số Huge cần đạt trước khi gửi
-getgenv().GMAIL_RECEIVERS = {""} -- tài khoản nhận mail
-getgenv().GMAX_MAIL_COST = "3m" -- phí mail tối đa
-getgenv().GMAIL_ITEMS = {
-    ["All Huges"]     = {Class = "Pet",      Id = "All Huges", MinAmount = 1},
-    ["Send Diamonds"] = {Class = "Currency", Id = "Diamonds",  KeepAmount = "5m", MinAmount = "50m"},
+local MAIL_CONFIG = loadstring(game:HttpGet(
+    "https://raw.githubusercontent.com/dracular111/04/main/MailConfig.lua"
+))()
 
-    ["MVP Key"]            = {Class = "Misc", Id = "MVP Key",            MinAmount = 50, KeepAmount = 0},
-    ["MVP Key Upper Half"] = {Class = "Misc", Id = "MVP Key Upper Half", MinAmount = 50, KeepAmount = 0},
-    ["MVP Key Lower Half"] = {Class = "Misc", Id = "MVP Key Lower Half", MinAmount = 100, KeepAmount = 0},
-    ["Crystal Key"]          = {Class = "Misc", Id = "Crystal Key",          MinAmount = 200, KeepAmount = 0},
-    ["Secret Key"]           = {Class = "Misc", Id = "Secret Key",           MinAmount = 200, KeepAmount = 0},
-    ["Fantasy Key"]          = {Class = "Misc", Id = "Fantasy Key",          MinAmount = 200, KeepAmount = 0},
-    ["Treasure Hideout Key"] = {Class = "Misc", Id = "Treasure Hideout Key", MinAmount = 200, KeepAmount = 0},
-    ["Tech Key"]             = {Class = "Misc", Id = "Tech Key",             MinAmount = 200, KeepAmount = 0},
-    ["Void Key"]             = {Class = "Misc", Id = "Void Key",             MinAmount = 200, KeepAmount = 0},
-    ["Time Trial Gift"]   = {Class = "Lootbox", Id = "Time Trial Gift",   MinAmount = 50, KeepAmount = 0},
-    ["Time Trial Gift 2"] = {Class = "Lootbox", Id = "Time Trial Gift 2", MinAmount = 50, KeepAmount = 0},
-    ["Golden Prison Key"]   = {Class = "Misc", Id = "Golden Prison Key",   MinAmount = 200, KeepAmount = 0},
-    ["Prison Key"]          = {Class = "Misc", Id = "Prison Key",          MinAmount = 200, KeepAmount = 0},
-    ["Hacker Key"]          = {Class = "Misc", Id = "Hacker Key",          MinAmount = 200, KeepAmount = 0},
-    ["Leprechaun Key"]      = {Class = "Misc", Id = "Leprechaun Key",      MinAmount = 200, KeepAmount = 0},
-    ["Lucky Raid Boss Key"] = {Class = "Misc", Id = "Lucky Raid Boss Key", MinAmount = 200, KeepAmount = 0},
-    ["Hype Egg 3"]          = {Class = "Lootbox", Id = "Hype Egg 3",       MinAmount = 1,  KeepAmount = 0},
-    ["Mega Potion Chest"]  = {Class = "Lootbox", Id = "Mega Potion Chest",  MinAmount = 1, KeepAmount = 0},
-    ["Mega Enchant Chest"] = {Class = "Lootbox", Id = "Mega Enchant Chest", MinAmount = 1, KeepAmount = 0},
-    ["Charm Stone"]        = {Class = "Misc",    Id = "Charm Stone",        MinAmount = 100, KeepAmount = 0},
-    ["Gargantuan Machine Hippomelon Egg"] = {Class = "Egg", Id = "Gargantuan Machine Hippomelon Egg", MinAmount = 1, KeepAmount = 0},
-    ["Overload Charm"]     = {Class = "Charm",   Id = "Overload",           MinAmount = 1,   KeepAmount = 0},
-    ["Royalty Charm"]      = {Class = "Charm",   Id = "Royalty",            MinAmount = 1,   KeepAmount = 0},
-    ["Rainbow Mini Chest"] = {Class = "Misc",    Id = "Rainbow Mini Chest", MinAmount = 20,  KeepAmount = 0},
-    ["Exclusive Origami Egg"] = {Class = "Egg", Id = "Exclusive Origami Egg", MinAmount = 1, KeepAmount = 0},
-    ["Exclusive Space Egg"]   = {Class = "Egg", Id = "Exclusive Space Egg",   MinAmount = 1, KeepAmount = 0},
-}
+getgenv().GMAIL_RECEIVERS = MAIL_CONFIG.RECEIVERS
+getgenv().GMAX_MAIL_COST = MAIL_CONFIG.MAX_MAIL_COST
+getgenv().GMAIL_ITEMS = MAIL_CONFIG.ITEMS
