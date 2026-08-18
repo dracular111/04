@@ -17,7 +17,7 @@ return {
     ITEMS = {
         --["All Huges"] = {Class = "Pet", Id = "All Huges", MinAmount = 1},
 
-        ["Send Diamonds"]        = {Class = "Currency", Id = "Diamonds", KeepAmount = "3m", MinAmount = "30m"},
+        ["Send Diamonds"]        = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "30m"},
 
         ["Gargantuan Machine Hippomelon Egg"] = {Class = "Egg", Id = "Gargantuan Machine Hippomelon Egg", MinAmount = 1, KeepAmount = 0},
         ["Exclusive Egg 55"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
