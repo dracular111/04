@@ -20,6 +20,17 @@ return {
         ["Send Diamonds"]        = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "30m"},
 
         ["Gargantuan Machine Hippomelon Egg"] = {Class = "Egg", Id = "Gargantuan Machine Hippomelon Egg", MinAmount = 1, KeepAmount = 0},
+        ["Exclusive Space Egg"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        ["Exclusive Egg 46"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        ["Exclusive Egg 47"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        ["Exclusive Egg 48"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        ["Exclusive Egg 49"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        ["Exclusive Egg 50"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        ["Exclusive Egg 51"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        ["Exclusive Egg 52"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        ["Exclusive Egg 53"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        ["Exclusive Egg 54"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        
         ["Exclusive Egg 55"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
         ["Exclusive Egg 56"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
         ["Exclusive Egg 57"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
