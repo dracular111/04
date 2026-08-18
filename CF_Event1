@@ -26,6 +26,7 @@ getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {
 getgenv().GDO_FIESTA  = true
 getgenv().GDO_CURSED = true
 getgenv().GDO_AUTO_ETERNAL_MAZE = true
+getgenv().GDO_SECRET_BOSS = true
 getgenv().GPINATA_MAX_LEVEL = 91
 getgenv().GAUTO_RAID = true
 getgenv().GHATCH_LOBBY = false  -- hatch for 10 seconds before entering a raid
@@ -58,7 +59,8 @@ getgenv().GINVENTORY_COUNTS = {
     ["Fiesta Gift"] = {Class = "Lootbox", Id = "Fiesta Gift"},
 }
 getgenv().GHATCH_ENCHANTS = {"Huge Hunter","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs"}
-getgenv().GENCHANTS = {"Strong Pets","Treasure Hunter","Criticals","Tap Power","Diamonds","Strong Pets","Tap Power"} -- leo rank zone
+getgenv().GENCHANTS = {"Strong Pets","Treasure Hunter","Criticals","Tap Power","Tap Power","Tap Power","Lucky Eggs","Tap Power"} -- event
+--getgenv().GENCHANTS = {"Strong Pets","Treasure Hunter","Criticals","Tap Power","Diamonds","Strong Pets","Tap Power"} -- leo rank zone
 getgenv().GLOOTBOXES = {"Locked Hype Egg","Locked Hype Egg 3","Titanic Fantasy Present","Fiesta Gift"}
 getgenv().GCOMBINE_KEYS = true -- tự ghép key
 getgenv().GAUTO_UPGRADE_PETS = true -- tự nâng cấp pet
