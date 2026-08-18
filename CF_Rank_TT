@@ -14,6 +14,7 @@ getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {
     "Knight Golem",
     "Ruinous Angelus",
     "Wisp Griffin",
+    "Catrin Dogs",
     "Alebrije Crocodile",
     "Sugar Skull Owl",
     "Sugar Skull Skunk",
