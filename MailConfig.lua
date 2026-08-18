@@ -29,7 +29,12 @@ return {
         ["Exclusive Egg 61"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
         ["Exclusive Egg 62"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
         ["Exclusive Egg 63"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+
+        ["Huge Machine Egg 5"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        ["Huge Machine Egg 6"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
         
+        ["Hype Egg"]            = {Class = "Lootbox", Id = "Hype Egg 3", MinAmount = 1, KeepAmount = 0},
+        ["Hype Egg 2"]            = {Class = "Lootbox", Id = "Hype Egg 3", MinAmount = 1, KeepAmount = 0},
         ["Hype Egg 3"]            = {Class = "Lootbox", Id = "Hype Egg 3", MinAmount = 1, KeepAmount = 0},
 
         ["MVP Key"]              = {Class = "Misc", Id = "MVP Key", MinAmount = 50, KeepAmount = 0},
