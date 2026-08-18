@@ -1,5 +1,6 @@
 task.wait(10)
-getgenv().GGFX_MODE = 1 -- chế độ đồ họa thấp
+getgenv().GGFX_TEST1 = true
+--getgenv().GGFX_MODE = 1 -- chế độ đồ họa thấp
 --getgenv().GRANK_TO = 40 -- rank mục tiêu
 --getgenv().GFOCUS_RANK_TO = 14
 --getgenv().GZONE_TO = 279 -- zone mục tiêu
