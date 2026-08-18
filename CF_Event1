@@ -35,7 +35,7 @@ getgenv().GPINATA_MAX_LEVEL = 91
 getgenv().GAUTO_RAID = true
 getgenv().GHATCH_LOBBY = false  -- hatch for 10 seconds before entering a raid
 getgenv().GUSE_KEY_ON_CHEST = true -- to use the Fiesta Keys on the chest
-getgenv().GMAX_MAZE_LEVEL = 150000 -- untill what level it will be doing your max possible raid level, otherwise it does the minimum which is half.
+getgenv().GMAX_MAZE_LEVEL = 400000 -- untill what level it will be doing your max possible raid level, otherwise it does the minimum which is half.
 
 getgenv().GTIMED_BOOSTS = 
 {
