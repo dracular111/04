@@ -5,7 +5,7 @@ getgenv().GGFX_MODE = 1 -- chế độ đồ họa thấp
 --getgenv().GFOCUS_RANK_TO = 14
 --getgenv().GZONE_TO = 279 -- zone mục tiêu
 
-getgenv().GMAX_EGG_SLOTS = 99 -- mở tối đa slot trứng
+getgenv().GMAX_EGG_SLOTS = 50 -- mở tối đa slot trứng
 getgenv().GMAX_EQUIP_SLOTS = 99 -- mở tối đa slot pet equip
 getgenv().GMASTERY_TO_MAX = "Enchants" -- mastery ưu tiên cày
 getgenv().GDAYCARE_NAME_PARTS_TO_EXCLUDE = {
