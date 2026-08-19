@@ -19,13 +19,6 @@ return {
 
         ["Send Diamonds"]        = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "50m"},
 
-        ["Huge Machine Egg 1"] = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
-        ["Huge Machine Egg 2"] = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
-        ["Huge Machine Egg 3"] = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
-        ["Huge Machine Egg 4"] = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
-        ["Huge Machine Egg 5"] = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
-        ["Huge Machine Egg 6"] = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
-        
         ["Exclusive Egg 46"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
         ["Exclusive Egg 47"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
         ["Exclusive Egg 48"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
