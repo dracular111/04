@@ -40,7 +40,7 @@ getgenv().GTIME_TRIAL_CHEST_TO_CLAIM = 3 -- số rương nhận trong Time Trial
 getgenv().GTIME_TRIAL_HATCH_FIRST_SECONDS = 10 -- hatch trước khi chạy trial
 getgenv().GTIME_TRIAL_ENCHANTS = {"Tap Power","Criticals","Super Lightning","Lightning","Strong Pets","Strong Pets","Tap Power","Tap Power","Strong Pets"} -- enchant dùng trong Time Trial
 
-getgenv().GHATCH_ENCHANTS = {"Huge Hunter","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs"}
+--getgenv().GHATCH_ENCHANTS = {"Huge Hunter","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs"}
 getgenv().GENCHANTS = {"Strong Pets","Treasure Hunter","Criticals","Tap Power","Diamonds","Strong Pets","Tap Power"} -- leo rank zone
 getgenv().GLOOTBOXES = {"Locked Hype Egg","Locked Hype Egg 3","Titanic Fantasy Present","Fiesta Gift"}
 getgenv().GCOMBINE_KEYS = true -- tự ghép key
