@@ -79,8 +79,8 @@ return {
         ["Treasure Charm"]                     = {Class = "Charm", Id = "Treasure", MinAmount = 1, KeepAmount = 0}, --price 3b4
         ["Overload Charm"]                     = {Class = "Charm", Id = "Overload", MinAmount = 2, KeepAmount = 0},  --price 3m
         ["Royalty Charm"]                      = {Class = "Charm", Id = "Royalty", MinAmount = 1, KeepAmount = 0},   --price 9m
-        --["Lightning Charm"]                  = {Class = "Charm", Id = "Lightning", MinAmount = 20, KeepAmount = 0}, --price 11k
-        --["Glittering Charm"]                 = {Class = "Charm", Id = "Glittering", MinAmount = 1, KeepAmount = 0}, --price 43k
+        --["Lightning Charm"]                  = {Class = "Charm", Id = "Lightning", MinAmount = 400, KeepAmount = 0}, --price 11k
+        --["Glittering Charm"]                 = {Class = "Charm", Id = "Glittering", MinAmount = 120, KeepAmount = 0}, --price 43k
 
         ["Agility Charm"]                      = {Class = "Charm", Id = "Agility", MinAmount = 800, KeepAmount = 0},   --price 6k
         ["Strength Charm"]                     = {Class = "Charm", Id = "Strength", MinAmount = 1000, KeepAmount = 0}, --price 5k
