@@ -74,7 +74,7 @@ return {
 
         ["Charm Stone"]                        = {Class = "Misc", Id = "Charm Stone", MinAmount = 200, KeepAmount = 0}, --price 29k
         ["Charm Chisel"]                       = {Class = "Misc", Id = "Charm Chisel", MinAmount = 25, KeepAmount = 0},  --price 227k
-        ["Charm Hammer"]                       = {Class = "Misc", Id = "Charm Stone", MinAmount = 400, KeepAmount = 0}, --price 12k
+        ["Charm Hammer"]                       = {Class = "Misc", Id = "Charm Hammer", MinAmount = 400, KeepAmount = 0}, --price 12k
 
         ["Treasure Charm"]                     = {Class = "Charm", Id = "Treasure", MinAmount = 1, KeepAmount = 0}, --price 3b4
         ["Overload Charm"]                     = {Class = "Charm", Id = "Overload", MinAmount = 2, KeepAmount = 0},  --price 3m
