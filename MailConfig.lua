@@ -77,6 +77,8 @@ return {
         ["Rainbow Mini Chest"]    = {Class = "Misc", Id = "Rainbow Mini Chest", MinAmount = 20, KeepAmount = 0},
         ["Charm Stone"]           = {Class = "Misc", Id = "Charm Stone", MinAmount = 200, KeepAmount = 0},
 
+        ["Magic Shard"]           = {Class = "Misc", Id = "Magic Shard", MinAmount = 50, KeepAmount = 0},
+
         ["Crystal Key"]          = {Class = "Misc", Id = "Crystal Key", MinAmount = 300, KeepAmount = 0},
         ["Secret Key"]            = {Class = "Misc", Id = "Secret Key", MinAmount = 300, KeepAmount = 0},
         ["Fantasy Key"]           = {Class = "Misc", Id = "Fantasy Key", MinAmount = 300, KeepAmount = 0},
