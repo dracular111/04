@@ -19,13 +19,13 @@ return {
 
         ["Send Diamonds"]        = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "50m"},
         ["Gargantuan Machine Hippomelon Egg"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
-        ["Exclusive Space Egg"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0}
+        ["Exclusive Space Egg"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
 
         ["Gargantuan Machine Egg 1"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
         ["Gargantuan Machine Egg 2"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
         ["Gargantuan Machine Egg 3"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
         ["Gargantuan Machine Egg 4"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
-        ["Gargantuan Machine Egg 5"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},.
+        ["Gargantuan Machine Egg 5"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
         ["Gargantuan Machine Egg 6"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
         
         ["Exclusive Egg 46"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
