@@ -68,7 +68,7 @@ getgenv().GINVENTORY_COUNTS = {
     ["Fiesta Orbs"] = {Class = "Currency", Id = "FiestaOrbs"},
     ["Fiesta Gift"] = {Class = "Lootbox", Id = "Fiesta Gift"},
 }
-getgenv().GHATCH_ENCHANTS = {"Huge Hunter","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs"}
+--getgenv().GHATCH_ENCHANTS = {"Huge Hunter","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs","Lucky Eggs"}
 getgenv().GENCHANTS = {"Strong Pets","Treasure Hunter","Criticals","Tap Power","Tap Power","Tap Power","Lucky Eggs","Tap Power"} -- event
 --getgenv().GENCHANTS = {"Strong Pets","Treasure Hunter","Criticals","Tap Power","Diamonds","Strong Pets","Tap Power"} -- leo rank zone
 getgenv().GLOOTBOXES = {"Locked Hype Egg","Locked Hype Egg 3","Titanic Fantasy Present","Fiesta Gift"}
