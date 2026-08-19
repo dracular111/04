@@ -43,7 +43,11 @@ return {
         ["Exclusive Egg 64"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
         ["Exclusive Egg 65"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
         ["Exclusive Egg 66"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
-
+        
+        ["Huge Machine Egg 1"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        ["Huge Machine Egg 2"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        ["Huge Machine Egg 3"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
+        ["Huge Machine Egg 4"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
         ["Huge Machine Egg 5"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
         ["Huge Machine Egg 6"]   = {Class = "Egg", Id = "Egg", MinAmount = 1, KeepAmount = 0},
         
