@@ -62,7 +62,7 @@ return {
         ["Hype Egg 3"]                         = {Class = "Lootbox", Id = "Hype Egg 3", MinAmount = 1, KeepAmount = 0},
 
         ["MVP Key"]                            = {Class = "Misc", Id = "MVP Key", MinAmount = 50, KeepAmount = 0},
-        ["MVP Key Upper Half"]                 = {Class = "Misc", Id = "MVP Key Upper Half", MinAmount = 100, KeepAmount = 0},
+        ["MVP Key Upper Half"]                 = {Class = "Misc", Id = "MVP Key Upper Half", MinAmount = 50, KeepAmount = 0},
         ["MVP Key Lower Half"]                 = {Class = "Misc", Id = "MVP Key Lower Half", MinAmount = 200, KeepAmount = 0},
         ["Time Trial Gift"]                    = {Class = "Lootbox", Id = "Time Trial Gift", MinAmount = 50, KeepAmount = 0},
         ["Time Trial Gift 2"]                  = {Class = "Lootbox", Id = "Time Trial Gift 2", MinAmount = 50, KeepAmount = 0},
